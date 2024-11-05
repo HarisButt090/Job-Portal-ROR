@@ -8,7 +8,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
-gem 'bcrypt', '~> 3.1.7'
+gem "bcrypt", "~> 3.1.7"
+gem "devise"
 
 
 
