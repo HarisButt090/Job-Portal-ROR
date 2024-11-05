@@ -8,7 +8,7 @@ class CreateJobApplications < ActiveRecord::Migration[7.2]
       t.string :latest_degree
       t.boolean :is_education_completed
       t.integer :graduated_year
-      t.integer :status
+      t.integer :status, default: 0
 
       t.timestamps
     end

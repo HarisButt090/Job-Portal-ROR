@@ -4,7 +4,7 @@ class CreateJobSeekers < ActiveRecord::Migration[7.2]
       t.references :user, null: false, foreign_key: true
       t.string :linkedin_profile_url
       t.string :github_portfolio_url
-      t.integer :preferred_job_type
+      t.integer :preferred_job_type, default: 0
       t.string :city
       t.string :address
 

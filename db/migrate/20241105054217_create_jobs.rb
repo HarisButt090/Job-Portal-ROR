@@ -10,9 +10,9 @@ class CreateJobs < ActiveRecord::Migration[7.2]
       t.integer :experience
       t.integer :salary
       t.text :qualification
-      t.integer :job_type
-      t.integer :displayed_status
-      t.integer :job_status
+      t.integer :job_type, default: 0
+      t.integer :displayed_status, default: 0
+      t.integer :job_status, default: 0
       t.references :employer, null: false, foreign_key: true
       t.date :job_posted_at
 
