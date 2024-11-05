@@ -7,5 +7,5 @@ class JobSeeker < ApplicationRecord
   has_many :educations, dependent: :destroy
   has_many :experiences, dependent: :destroy
 
-  enum status: { on_site: 0, hybrid: 1, remote: 2 }
+  enum preferred_job_type: { on_site: 0, hybrid: 1, remote: 2 }
 end
