@@ -3,5 +3,5 @@ class JobApplication < ApplicationRecord
   belongs_to :job_seeker
   has_many :interviews, dependent: :destroy
 
-  enum status: { screened: 0, accepted: 1, denied: 2 }
+  enum status: { pending: 0, screened: 1, accepted: 2, denied: 3 }
 end
