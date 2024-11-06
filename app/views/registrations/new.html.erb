@@ -1,0 +1,71 @@
+<%= form_for @user, url: user_registration_path do |f| %>
+  <h3>Personal Details</h3>
+  <div class="form-group">
+    <%= f.label :name, 'Name' %>
+    <%= f.text_field :name, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, 'Email' %>
+    <%= f.email_field :email, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, 'Password' %>
+    <%= f.password_field :password, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'Confirm Password' %>
+    <%= f.password_field :password_confirmation, required: true, class: 'form-control' %>
+  </div>
+
+  <%= f.hidden_field :role, value: params[:role] %>
+
+  <h3>Company Details</h3>
+  <%= f.fields_for :company do |c| %>
+    <div class="form-group">
+      <%= c.label :company_name, 'Company Name' %>
+      <%= c.text_field :company_name, required: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= c.label :industry, 'Industry' %>
+      <%= c.text_field :industry, required: true, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= c.label :employee_size, 'Employee Size' %>
+      <%= c.text_field :employee_size, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= c.label :address, 'Address' %>
+      <%= c.text_field :address, class: 'form-control' %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Sign Up", class: 'btn btn-primary' %>
+<% end %>
+
+<% if flash[:notice] %>
+  <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:alert] %>
+  <p class="alert"><%= flash[:alert] %></p>
+<% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const passwordInput = document.querySelector("#user_password");
+    const confirmPasswordInput = document.querySelector("#user_password_confirmation");
+
+    confirmPasswordInput.addEventListener("input", function () {
+      if (passwordInput.value === confirmPasswordInput.value) {
+        confirmPasswordInput.style.borderColor = "green"; // Match
+      } else {
+        confirmPasswordInput.style.borderColor = "red"; // No match
+      }
+    });
+  });
+</script>

@@ -132,8 +132,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.integer "role", default: 0
     t.string "contact_no"
     t.integer "status", default: 0
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
