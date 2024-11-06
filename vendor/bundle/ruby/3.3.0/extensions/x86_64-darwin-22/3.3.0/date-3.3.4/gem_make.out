@@ -6,10 +6,17 @@ checking for altzone in time.h with  -Werror... no
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-70dobx sitelibdir\=./.gem.20241107-96375-70dobx clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-70dobx sitelibdir\=./.gem.20241107-96375-70dobx
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jokwty sitelibdir\=./.gem.20241107-27785-jokwty clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jokwty sitelibdir\=./.gem.20241107-27785-jokwty
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling date_core.c
 compiling date_parse.c
 compiling date_strftime.c
@@ -17,8 +24,16 @@ compiling date_strptime.c
 linking shared-object date_core.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-70dobx sitelibdir\=./.gem.20241107-96375-70dobx install
 /usr/bin/install -c -m 0755 date_core.bundle ./.gem.20241107-96375-70dobx
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-70dobx sitelibdir\=./.gem.20241107-96375-70dobx clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jokwty sitelibdir\=./.gem.20241107-27785-jokwty install
+/usr/bin/install -c -m 0755 date_core.bundle ./.gem.20241107-27785-jokwty
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/date-3.3.4/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jokwty sitelibdir\=./.gem.20241107-27785-jokwty clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

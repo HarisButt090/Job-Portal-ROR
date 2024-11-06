@@ -14,10 +14,17 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-qk6pbu sitelibdir\=./.gem.20241107-96375-qk6pbu clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-qk6pbu sitelibdir\=./.gem.20241107-96375-qk6pbu
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-kn4gie sitelibdir\=./.gem.20241107-27785-kn4gie clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-kn4gie sitelibdir\=./.gem.20241107-27785-kn4gie
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling bytebuffer.c
 compiling monitor.c
 compiling nio4r_ext.c
@@ -275,8 +282,16 @@ compiling selector.c
 linking shared-object nio4r_ext.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-qk6pbu sitelibdir\=./.gem.20241107-96375-qk6pbu install
 /usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20241107-96375-qk6pbu
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-qk6pbu sitelibdir\=./.gem.20241107-96375-qk6pbu clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-kn4gie sitelibdir\=./.gem.20241107-27785-kn4gie install
+/usr/bin/install -c -m 0755 nio4r_ext.bundle ./.gem.20241107-27785-kn4gie
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.3/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-kn4gie sitelibdir\=./.gem.20241107-27785-kn4gie clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

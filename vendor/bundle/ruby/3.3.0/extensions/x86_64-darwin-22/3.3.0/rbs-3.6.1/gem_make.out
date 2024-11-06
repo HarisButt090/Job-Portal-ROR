@@ -4,10 +4,17 @@ checking for whether -std=gnu99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-66nmi6 sitelibdir\=./.gem.20241107-96375-66nmi6 clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-66nmi6 sitelibdir\=./.gem.20241107-96375-66nmi6
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-lnbtik sitelibdir\=./.gem.20241107-27785-lnbtik clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-lnbtik sitelibdir\=./.gem.20241107-27785-lnbtik
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling constants.c
 compiling lexer.c
 compiling lexstate.c
@@ -20,8 +27,16 @@ compiling unescape.c
 linking shared-object rbs_extension.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-66nmi6 sitelibdir\=./.gem.20241107-96375-66nmi6 install
 /usr/bin/install -c -m 0755 rbs_extension.bundle ./.gem.20241107-96375-66nmi6
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-66nmi6 sitelibdir\=./.gem.20241107-96375-66nmi6 clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-lnbtik sitelibdir\=./.gem.20241107-27785-lnbtik install
+/usr/bin/install -c -m 0755 rbs_extension.bundle ./.gem.20241107-27785-lnbtik
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-lnbtik sitelibdir\=./.gem.20241107-27785-lnbtik clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

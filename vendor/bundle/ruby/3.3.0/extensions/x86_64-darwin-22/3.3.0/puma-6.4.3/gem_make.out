@@ -16,18 +16,33 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-mwfe83 sitelibdir\=./.gem.20241107-96375-mwfe83 clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-mwfe83 sitelibdir\=./.gem.20241107-96375-mwfe83
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-imw0vc sitelibdir\=./.gem.20241107-27785-imw0vc clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-imw0vc sitelibdir\=./.gem.20241107-27785-imw0vc
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-mwfe83 sitelibdir\=./.gem.20241107-96375-mwfe83 install
 /usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20241107-96375-mwfe83/puma
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-mwfe83 sitelibdir\=./.gem.20241107-96375-mwfe83 clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-imw0vc sitelibdir\=./.gem.20241107-27785-imw0vc install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20241107-27785-imw0vc/puma
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-imw0vc sitelibdir\=./.gem.20241107-27785-imw0vc clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

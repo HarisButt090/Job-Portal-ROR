@@ -12,16 +12,31 @@ checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-m9je7q sitelibdir\=./.gem.20241107-96375-m9je7q clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-m9je7q sitelibdir\=./.gem.20241107-96375-m9je7q
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ehzii8 sitelibdir\=./.gem.20241107-27785-ehzii8 clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ehzii8 sitelibdir\=./.gem.20241107-27785-ehzii8
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling console.c
 linking shared-object io/console.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-m9je7q sitelibdir\=./.gem.20241107-96375-m9je7q install
 /usr/bin/install -c -m 0755 console.bundle ./.gem.20241107-96375-m9je7q/io
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-m9je7q sitelibdir\=./.gem.20241107-96375-m9je7q clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ehzii8 sitelibdir\=./.gem.20241107-27785-ehzii8 install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20241107-27785-ehzii8/io
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ehzii8 sitelibdir\=./.gem.20241107-27785-ehzii8 clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

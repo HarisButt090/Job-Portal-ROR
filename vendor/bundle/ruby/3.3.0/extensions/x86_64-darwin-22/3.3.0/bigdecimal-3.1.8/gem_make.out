@@ -32,17 +32,32 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-8vhzvk sitelibdir\=./.gem.20241107-96375-8vhzvk clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-8vhzvk sitelibdir\=./.gem.20241107-96375-8vhzvk
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-7ijdst sitelibdir\=./.gem.20241107-27785-7ijdst clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-7ijdst sitelibdir\=./.gem.20241107-27785-7ijdst
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-8vhzvk sitelibdir\=./.gem.20241107-96375-8vhzvk install
 /usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20241107-96375-8vhzvk
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-8vhzvk sitelibdir\=./.gem.20241107-96375-8vhzvk clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-7ijdst sitelibdir\=./.gem.20241107-27785-7ijdst install
+/usr/bin/install -c -m 0755 bigdecimal.bundle ./.gem.20241107-27785-7ijdst
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.8/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-7ijdst sitelibdir\=./.gem.20241107-27785-7ijdst clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)

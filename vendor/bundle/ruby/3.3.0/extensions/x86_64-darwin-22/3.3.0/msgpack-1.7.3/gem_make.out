@@ -14,10 +14,17 @@ checking for whether -DSTR_UMINUS_DEDUPE_FROZEN=1 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh
+>>>>>>> ae59436 (Devise configuration with models and migrations)
 compiling buffer.c
 compiling buffer_class.c
 compiling extension_value_class.c
@@ -33,8 +40,16 @@ compiling unpacker_ext_registry.c
 linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf install
 /usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241107-96375-ozcupf/msgpack
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh install
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241107-27785-ewu5lh/msgpack
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh clean
+>>>>>>> ae59436 (Devise configuration with models and migrations)
