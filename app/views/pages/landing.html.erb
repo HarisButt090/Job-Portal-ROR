@@ -3,6 +3,7 @@
     <div class="col-md-8 text-center">
       <h1 class="display-4">Welcome to the Job Portal</h1>
       <p class="lead">Your Future Starts Here</p>
+<<<<<<< HEAD
       
       <div class="my-4">
         <a href="<%= new_user_registration_path %>" class="btn btn-success btn-lg shadow-lg">Sign Up</a>
@@ -11,3 +12,38 @@
     </div>
   </div>
 </div>
+=======
+         <h3> Register yourself </h3>
+      <!-- Registration Options -->
+      <select id="registration-option" class="form-select mb-4" onchange="window.location.href=this.value">
+        <option value="">Choose an option</option>
+        <option value="<%= new_user_registration_path(role: 'company_admin') %>">Register as Company Admin</option>
+        <option value="<%= new_user_registration_path(role: 'job_seeker') %>">Register as Job Seeker</option>
+      </select>
+
+      <!-- Fancy Login Section -->
+      <div class="my-4">
+        <h3>Already have an account?</h3>
+        <p class="lead">Log in to continue</p>
+        <a href="<%= new_user_session_path %>" class="btn btn-primary btn-lg shadow-lg">Login</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- Fancy Button and CSS for Style -->
+<style>
+  .btn-lg {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+  .shadow-lg {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+</style>
+>>>>>>> 407dc42 (Company Registration through devise and redirecting to dashboard)
