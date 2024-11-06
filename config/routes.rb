@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
-  resources :friends
-  get "home/about"
-  root "home#index"
+  root "pages#landing"
+  devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
+  get "verification_success", to: "registrations#verification_success", as: "verification_success"
+  get "dashboard", to: "dashboard#index", as: :dashboard
+
+
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

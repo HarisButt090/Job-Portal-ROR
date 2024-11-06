@@ -10,6 +10,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 gem "devise"
+# gem "letter_opener"
+
 
 
 
@@ -28,6 +30,8 @@ end
 
 group :development do
   gem "web-console"
+  # gem "letter_opener"
+  gem "letter_opener_web"
 end
 
 group :test do
