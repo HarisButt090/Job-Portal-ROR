@@ -1,0 +1,19 @@
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/debug-1.9.2/ext/debug
+/Users/staunch/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bk38a4 sitelibdir\=./.gem.20241106-57927-bk38a4 clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bk38a4 sitelibdir\=./.gem.20241106-57927-bk38a4
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.bundle
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bk38a4 sitelibdir\=./.gem.20241106-57927-bk38a4 install
+/usr/bin/install -c -m 0755 debug.bundle ./.gem.20241106-57927-bk38a4/debug
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/debug-1.9.2/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bk38a4 sitelibdir\=./.gem.20241106-57927-bk38a4 clean
