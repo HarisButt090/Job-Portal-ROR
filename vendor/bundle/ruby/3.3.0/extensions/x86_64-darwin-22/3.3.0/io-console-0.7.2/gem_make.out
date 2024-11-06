@@ -12,16 +12,31 @@ checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-uadvfi sitelibdir\=./.gem.20241107-73888-uadvfi clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-uadvfi sitelibdir\=./.gem.20241107-73888-uadvfi
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bni4wx sitelibdir\=./.gem.20241106-57927-bni4wx clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bni4wx sitelibdir\=./.gem.20241106-57927-bni4wx
+>>>>>>> dabeecb (Required files for devise configuration)
 compiling console.c
 linking shared-object io/console.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-uadvfi sitelibdir\=./.gem.20241107-73888-uadvfi install
 /usr/bin/install -c -m 0755 console.bundle ./.gem.20241107-73888-uadvfi/io
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-uadvfi sitelibdir\=./.gem.20241107-73888-uadvfi clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bni4wx sitelibdir\=./.gem.20241106-57927-bni4wx install
+/usr/bin/install -c -m 0755 console.bundle ./.gem.20241106-57927-bni4wx/io
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-bni4wx sitelibdir\=./.gem.20241106-57927-bni4wx clean
+>>>>>>> dabeecb (Required files for devise configuration)

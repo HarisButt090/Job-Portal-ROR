@@ -12,6 +12,7 @@ compiling build/static/pack.o
 compiling build/static/prettyprint.o
 compiling build/static/prism.o
 <<<<<<< HEAD
+<<<<<<< HEAD
 Rename failed: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/build/static/prism-16601bf4.o.tmp -> /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/build/static/prism.o: No such file or directory
 error: unable to rename temporary '/Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/build/static/prism-16601bf4.o.tmp' to output file '/Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/build/static/prism.o': 'No such file or directory'
 1 error generated.
@@ -27,6 +28,8 @@ extconf.rb:51:in `system': Command failed with exit 2: make (RuntimeError)
 
 extconf failed, exit code 1
 =======
+=======
+>>>>>>> dabeecb (Required files for devise configuration)
 compiling build/static/regexp.o
 compiling build/static/serialize.o
 compiling build/static/static_literals.o
@@ -46,19 +49,34 @@ ar: creating archive build/libprism.a
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-wnkgob sitelibdir\=./.gem.20241107-74695-wnkgob clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-wnkgob sitelibdir\=./.gem.20241107-74695-wnkgob
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-mkw6ys sitelibdir\=./.gem.20241106-58678-mkw6ys clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-mkw6ys sitelibdir\=./.gem.20241106-58678-mkw6ys
+>>>>>>> dabeecb (Required files for devise configuration)
 compiling api_node.c
 compiling api_pack.c
 compiling extension.c
 linking shared-object prism/prism.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-wnkgob sitelibdir\=./.gem.20241107-74695-wnkgob install
 /usr/bin/install -c -m 0755 prism.bundle ./.gem.20241107-74695-wnkgob/prism
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-wnkgob sitelibdir\=./.gem.20241107-74695-wnkgob clean
 >>>>>>> f829602 (Vendors folder)
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-mkw6ys sitelibdir\=./.gem.20241106-58678-mkw6ys install
+/usr/bin/install -c -m 0755 prism.bundle ./.gem.20241106-58678-mkw6ys/prism
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/prism-1.2.0/ext/prism
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-mkw6ys sitelibdir\=./.gem.20241106-58678-mkw6ys clean
+>>>>>>> dabeecb (Required files for devise configuration)
