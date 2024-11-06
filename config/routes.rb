@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users
 <<<<<<< HEAD
   # Letter opener route
+=======
+  root "pages#landing"
+  devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
+  get "verification_success", to: "registrations#verification_success", as: "verification_success"
+  get "dashboard", to: "dashboard#index", as: :dashboard
+
+>>>>>>> fcd77f3 (Company Registration through devise and redirecting to dashboard)
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
