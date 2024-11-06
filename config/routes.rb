@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     get "verify_email", to: "registrations#verify_email", as: "verify_email"
     get "company_details", to: "registrations#company_details", as: "company_details"
     post "save_company_details", to: "registrations#save_company_details", as: "save_company_details"
-  end
 
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
