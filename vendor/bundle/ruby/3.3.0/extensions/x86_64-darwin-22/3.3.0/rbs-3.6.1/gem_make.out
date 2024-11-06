@@ -4,10 +4,17 @@ checking for whether -std=gnu99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-u1m1xw sitelibdir\=./.gem.20241107-74695-u1m1xw clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-u1m1xw sitelibdir\=./.gem.20241107-74695-u1m1xw
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-uybokw sitelibdir\=./.gem.20241106-58678-uybokw clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-uybokw sitelibdir\=./.gem.20241106-58678-uybokw
+>>>>>>> dabeecb (Required files for devise configuration)
 compiling constants.c
 compiling lexer.c
 compiling lexstate.c
@@ -20,8 +27,16 @@ compiling unescape.c
 linking shared-object rbs_extension.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-u1m1xw sitelibdir\=./.gem.20241107-74695-u1m1xw install
 /usr/bin/install -c -m 0755 rbs_extension.bundle ./.gem.20241107-74695-u1m1xw
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
 make DESTDIR\= sitearchdir\=./.gem.20241107-74695-u1m1xw sitelibdir\=./.gem.20241107-74695-u1m1xw clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-uybokw sitelibdir\=./.gem.20241106-58678-uybokw install
+/usr/bin/install -c -m 0755 rbs_extension.bundle ./.gem.20241106-58678-uybokw
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/rbs-3.6.1/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20241106-58678-uybokw sitelibdir\=./.gem.20241106-58678-uybokw clean
+>>>>>>> dabeecb (Required files for devise configuration)

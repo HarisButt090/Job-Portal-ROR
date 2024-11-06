@@ -16,18 +16,33 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-oymd5n sitelibdir\=./.gem.20241107-73888-oymd5n clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-oymd5n sitelibdir\=./.gem.20241107-73888-oymd5n
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-jh6fvn sitelibdir\=./.gem.20241106-57927-jh6fvn clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-jh6fvn sitelibdir\=./.gem.20241106-57927-jh6fvn
+>>>>>>> dabeecb (Required files for devise configuration)
 compiling http11_parser.c
 compiling mini_ssl.c
 compiling puma_http11.c
 linking shared-object puma/puma_http11.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-oymd5n sitelibdir\=./.gem.20241107-73888-oymd5n install
 /usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20241107-73888-oymd5n/puma
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241107-73888-oymd5n sitelibdir\=./.gem.20241107-73888-oymd5n clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-jh6fvn sitelibdir\=./.gem.20241106-57927-jh6fvn install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20241106-57927-jh6fvn/puma
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/puma-6.4.3/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-jh6fvn sitelibdir\=./.gem.20241106-57927-jh6fvn clean
+>>>>>>> dabeecb (Required files for devise configuration)
