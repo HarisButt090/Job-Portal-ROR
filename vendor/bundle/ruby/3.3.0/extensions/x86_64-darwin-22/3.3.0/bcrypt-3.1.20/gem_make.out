@@ -4,16 +4,28 @@ creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-dzp10u sitelibdir\=./.gem.20241107-96375-dzp10u clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-dzp10u sitelibdir\=./.gem.20241107-96375-dzp10u
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-xqvxns sitelibdir\=./.gem.20241107-27785-xqvxns clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-xqvxns sitelibdir\=./.gem.20241107-27785-xqvxns
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-6ht8cw sitelibdir\=./.gem.20241106-57927-6ht8cw clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-6ht8cw sitelibdir\=./.gem.20241106-57927-6ht8cw
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 compiling bcrypt_ext.c
 bcrypt_ext.c:41:38: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
     args.size   = NIL_P(input) ? 0 : RSTRING_LEN(input);
@@ -34,15 +46,28 @@ linking shared-object bcrypt_ext.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-dzp10u sitelibdir\=./.gem.20241107-96375-dzp10u install
 /usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20241107-96375-dzp10u
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-dzp10u sitelibdir\=./.gem.20241107-96375-dzp10u clean
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-xqvxns sitelibdir\=./.gem.20241107-27785-xqvxns install
 /usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20241107-27785-xqvxns
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-xqvxns sitelibdir\=./.gem.20241107-27785-xqvxns clean
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-6ht8cw sitelibdir\=./.gem.20241106-57927-6ht8cw install
+/usr/bin/install -c -m 0755 bcrypt_ext.bundle ./.gem.20241106-57927-6ht8cw
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/bcrypt-3.1.20/ext/mri
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-6ht8cw sitelibdir\=./.gem.20241106-57927-6ht8cw clean
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)

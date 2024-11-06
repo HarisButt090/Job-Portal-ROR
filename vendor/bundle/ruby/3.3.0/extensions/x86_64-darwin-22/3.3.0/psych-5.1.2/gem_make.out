@@ -7,20 +7,34 @@ creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-7dxa7r sitelibdir\=./.gem.20241107-96375-7dxa7r clean
 =======
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr clean
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-s9h7vr sitelibdir\=./.gem.20241106-57927-s9h7vr clean
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-7dxa7r sitelibdir\=./.gem.20241107-96375-7dxa7r
 =======
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-s9h7vr sitelibdir\=./.gem.20241106-57927-s9h7vr
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 compiling psych.c
 compiling psych_emitter.c
 compiling psych_parser.c
@@ -30,18 +44,31 @@ linking shared-object psych.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-7dxa7r sitelibdir\=./.gem.20241107-96375-7dxa7r install
 /usr/bin/install -c -m 0755 psych.bundle ./.gem.20241107-96375-7dxa7r
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-7dxa7r sitelibdir\=./.gem.20241107-96375-7dxa7r clean
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr install
 /usr/bin/install -c -m 0755 psych.bundle ./.gem.20241107-27785-jhezmr
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-jhezmr sitelibdir\=./.gem.20241107-27785-jhezmr clean
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-s9h7vr sitelibdir\=./.gem.20241106-57927-s9h7vr install
+/usr/bin/install -c -m 0755 psych.bundle ./.gem.20241106-57927-s9h7vr
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/psych-5.1.2/ext/psych
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-s9h7vr sitelibdir\=./.gem.20241106-57927-s9h7vr clean
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 cd libyaml && /Library/Developer/CommandLineTools/usr/bin/make clean
 /bin/sh: line 0: cd: libyaml: No such file or directory
 make: [clean-so] Error 1 (ignored)

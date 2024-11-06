@@ -4,20 +4,33 @@ creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-s2bqwd sitelibdir\=./.gem.20241107-96375-s2bqwd clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-s2bqwd sitelibdir\=./.gem.20241107-96375-s2bqwd
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-seitf8 sitelibdir\=./.gem.20241107-27785-seitf8 clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-seitf8 sitelibdir\=./.gem.20241107-27785-seitf8
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-gei35x sitelibdir\=./.gem.20241106-57927-gei35x clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-gei35x sitelibdir\=./.gem.20241106-57927-gei35x
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 compiling stringio.c
 linking shared-object stringio.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
+<<<<<<< HEAD
 <<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-s2bqwd sitelibdir\=./.gem.20241107-96375-s2bqwd install
 /usr/bin/install -c -m 0755 stringio.bundle ./.gem.20241107-96375-s2bqwd
@@ -25,9 +38,21 @@ make DESTDIR\= sitearchdir\=./.gem.20241107-96375-s2bqwd sitelibdir\=./.gem.2024
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-s2bqwd sitelibdir\=./.gem.20241107-96375-s2bqwd clean
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-seitf8 sitelibdir\=./.gem.20241107-27785-seitf8 install
 /usr/bin/install -c -m 0755 stringio.bundle ./.gem.20241107-27785-seitf8
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-seitf8 sitelibdir\=./.gem.20241107-27785-seitf8 clean
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-gei35x sitelibdir\=./.gem.20241106-57927-gei35x install
+/usr/bin/install -c -m 0755 stringio.bundle ./.gem.20241106-57927-gei35x
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/stringio-3.1.1/ext/stringio
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-gei35x sitelibdir\=./.gem.20241106-57927-gei35x clean
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)

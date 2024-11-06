@@ -15,16 +15,28 @@ creating Makefile
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh clean
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-x684sy sitelibdir\=./.gem.20241106-57927-x684sy clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-x684sy sitelibdir\=./.gem.20241106-57927-x684sy
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 compiling buffer.c
 compiling buffer_class.c
 compiling extension_value_class.c
@@ -41,15 +53,28 @@ linking shared-object msgpack/msgpack.bundle
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 <<<<<<< HEAD
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf install
 /usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241107-96375-ozcupf/msgpack
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-96375-ozcupf sitelibdir\=./.gem.20241107-96375-ozcupf clean
 =======
+=======
+>>>>>>> 5ddbf50 (Required files for devise configuration)
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh install
 /usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241107-27785-ewu5lh/msgpack
 
 current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241107-27785-ewu5lh sitelibdir\=./.gem.20241107-27785-ewu5lh clean
+<<<<<<< HEAD
 >>>>>>> ae59436 (Devise configuration with models and migrations)
+=======
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-x684sy sitelibdir\=./.gem.20241106-57927-x684sy install
+/usr/bin/install -c -m 0755 msgpack.bundle ./.gem.20241106-57927-x684sy/msgpack
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.3/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241106-57927-x684sy sitelibdir\=./.gem.20241106-57927-x684sy clean
+>>>>>>> dabeecb (Required files for devise configuration)
+>>>>>>> 5ddbf50 (Required files for devise configuration)
