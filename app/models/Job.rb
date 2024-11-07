@@ -1,6 +1,7 @@
 class Job < ApplicationRecord
   belongs_to :employer
   has_many :job_applications, dependent: :destroy
+  belongs_to :company
 
   enum display_status: { draft: 0, published: 1, archived: 2 }
   enum job_status: { closed: 0, active: 1 }
