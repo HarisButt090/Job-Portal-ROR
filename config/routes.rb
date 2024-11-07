@@ -4,10 +4,18 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   devise_for :users
+<<<<<<< HEAD
   # Letter opener route
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
+=======
+  resources :friends
+  get "home/about"
+  root "home#index"
+
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+>>>>>>> a05a5ac (Configured devise)
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
