@@ -9,7 +9,10 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
+<<<<<<< HEAD
 # for authentication purposes
+=======
+>>>>>>> a05a5ac (Configured devise)
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
 gem "tzinfo-data", platforms: %i[ jruby ]
