@@ -1,0 +1,18 @@
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/staunch/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241107-96375-h0pfeb sitelibdir\=./.gem.20241107-96375-h0pfeb clean
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241107-96375-h0pfeb sitelibdir\=./.gem.20241107-96375-h0pfeb
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241107-96375-h0pfeb sitelibdir\=./.gem.20241107-96375-h0pfeb install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20241107-96375-h0pfeb/racc
+
+current directory: /Users/staunch/Desktop/Job-Portal-ROR/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241107-96375-h0pfeb sitelibdir\=./.gem.20241107-96375-h0pfeb clean
