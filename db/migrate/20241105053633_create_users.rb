@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[7.2]
       t.integer :role, default: 0
       t.string :contact_no
       t.integer :status, default: 0
-      t.references :company, null: true, foreign_key: true
+
       t.timestamps
     end
   end
