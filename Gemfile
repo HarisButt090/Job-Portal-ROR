@@ -9,20 +9,12 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
-<<<<<<< HEAD
 gem 'devise', '~> 4.9', '>= 4.9.3'
-=======
-gem "devise"
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 gem "bootsnap", require: false
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
 
