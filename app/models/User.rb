@@ -1,8 +1,15 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
   # devise configuration in user model
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   # associations
+=======
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+>>>>>>> a05a5ac (Configured devise)
   has_one :job_seeker, dependent: :destroy
   has_one :employer, dependent: :destroy
   has_one :company, dependent: :destroy
