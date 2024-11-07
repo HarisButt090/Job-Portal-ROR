@@ -18,15 +18,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.integer "employee_size"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.integer "user_id", null: false
-=======
-    t.integer "user_id"
->>>>>>> a96be1b (UPdated the migrations for the job portal project)
-=======
-    t.integer "user_id", null: false
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
@@ -129,15 +121,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
   end
 
   create_table "skills", force: :cascade do |t|
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.string "name"
-=======
-    t.string "skill"
->>>>>>> a96be1b (UPdated the migrations for the job portal project)
-=======
-    t.string "name"
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -147,32 +131,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.string "email"
     t.integer "role", default: 0
     t.string "contact_no"
-<<<<<<< HEAD
-<<<<<<< HEAD
     t.integer "status", default: 0
-=======
-    t.integer "status"
->>>>>>> a96be1b (UPdated the migrations for the job portal project)
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-<<<<<<< HEAD
-=======
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
-    t.index ["email"], name: "index_users_on_email", unique: true
->>>>>>> a96be1b (UPdated the migrations for the job portal project)
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-=======
-    t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
   end
 
   add_foreign_key "companies", "users"
@@ -187,12 +155,4 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
   add_foreign_key "jobs", "employers"
   add_foreign_key "recruiters", "companies"
   add_foreign_key "recruiters", "users"
-<<<<<<< HEAD
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> a96be1b (UPdated the migrations for the job portal project)
-=======
-end
->>>>>>> ed9f1a6 (Updated migartions of users, skills and comapnies)
