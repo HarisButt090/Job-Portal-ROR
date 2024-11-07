@@ -5,9 +5,8 @@ class CreateExperiences < ActiveRecord::Migration[7.2]
       t.string :position
       t.date :start_date
       t.date :end_date
-      t.references :job_seeker, null: false, foreign_key: true
-
       t.timestamps
+      t.references :job_seeker, null: false, foreign_key: true
     end
   end
 end

@@ -5,7 +5,6 @@ class CreateCompanies < ActiveRecord::Migration[7.2]
       t.string :industry
       t.string :address
       t.integer :employee_size
-
       t.timestamps
     end
   end
