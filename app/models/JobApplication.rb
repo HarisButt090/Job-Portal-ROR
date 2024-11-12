@@ -2,6 +2,7 @@ class JobApplication < ApplicationRecord
   # associations
   belongs_to :job
   belongs_to :job_seeker
+
   has_many :interviews, dependent: :destroy
 
   # enums
