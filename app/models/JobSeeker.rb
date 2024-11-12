@@ -1,5 +1,7 @@
 class JobSeeker < ApplicationRecord
+  # associations
   belongs_to :user
+
   has_many :job_applications, dependent: :destroy
   has_many :interviews, through: :job_applications
   has_many :job_seeker_skills, dependent: :destroy
@@ -7,5 +9,6 @@ class JobSeeker < ApplicationRecord
   has_many :educations, dependent: :destroy
   has_many :experiences, dependent: :destroy
 
+  # enums
   enum preferred_job_type: { on_site: 0, hybrid: 1, remote: 2 }
 end
