@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  # devise configuration in user model
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   # associations
   has_one :job_seeker, dependent: :destroy
   has_one :employer, dependent: :destroy
