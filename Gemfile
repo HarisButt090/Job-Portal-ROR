@@ -9,7 +9,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
-# used devise gem for authentication purposes
+# for authentication purposes
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -27,7 +27,7 @@ end
 
 group :development do
   gem "web-console"
-  # used letter opener web to get verification email link to verify the user.
+  # interface for browsing sent emails
   gem 'letter_opener_web'
 end
 
