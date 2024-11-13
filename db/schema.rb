@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_13_074304) do
+
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "industry"
@@ -105,10 +106,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
     t.date "job_posted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "employer_id"
+    t.integer "recruiter_id"
     t.integer "company_id", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id"
-    t.index ["employer_id"], name: "index_jobs_on_employer_id"
+    t.index ["recruiter_id"], name: "index_jobs_on_recruiter_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
@@ -144,10 +145,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
-    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "companies", "users"
   add_foreign_key "educations", "job_seekers"
   add_foreign_key "experiences", "job_seekers"
@@ -158,7 +161,5 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
   add_foreign_key "job_seeker_skills", "skills"
   add_foreign_key "job_seekers", "users"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "jobs", "employers"
-  add_foreign_key "recruiters", "companies"
-  add_foreign_key "recruiters", "users"
+  add_foreign_key "jobs", "recruiters"
 end

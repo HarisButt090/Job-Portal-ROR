@@ -2,6 +2,8 @@ class JobSeeker < ApplicationRecord
   # associations
   belongs_to :user
 
+  has_many :job_applications, dependent: :destroy
+  has_many :interviews, through: :job_applications
   has_many :educations, dependent: :destroy
   has_many :experiences, dependent: :destroy
 
