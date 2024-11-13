@@ -179,8 +179,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_103102) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+<<<<<<< HEAD
 >>>>>>> f82942d (Company Registration through devise and redirecting to dashboard)
     t.index ["email"], name: "index_users_on_email", unique: true
+=======
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+>>>>>>> 9022dbc (Company registration using namespaces)
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
