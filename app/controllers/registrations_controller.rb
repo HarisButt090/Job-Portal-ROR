@@ -1,31 +1,40 @@
-class RegistrationsController < ApplicationController
-  def new
-    @user = User.new
-    @user.build_company
+class RegistrationsController < Devise::RegistrationsController
+  def new_company_admin
+    build_resource({})
+    resource.build_company
+    render template: "users/registrations/new_company_admin"
   end
 
   def create
-    @user = User.new(user_params)
+    build_resource(sign_up_params)
 
-    if @user.save
-      UserMailer.verification_email(@user).deliver_later
-        redirect_to verification_success_path
+    if params[:user][:company_attributes].present?
+      resource.build_company(company_params)
+    end
+
+    if resource.save
+      if resource.active_for_authentication?
+        set_flash_message! :notice, :signed_up
+        sign_up(resource_name, resource)
+        redirect_to verification_success_path and return
+      else
+        set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
+        expire_data_after_sign_in!
+        redirect_to verification_success_path and return
+      end
     else
-      # Log user errors if saving fails
-      Rails.logger.debug "User errors: #{@user.errors.full_messages}"
-      render :new
+      clean_up_passwords resource
+      render template: "users/registrations/new_company_admin"
     end
   end
 
   def verification_success
+    render template: "users/registrations/verification_success"
   end
 
   private
 
-  def user_params
-    params.require(:user).permit(
-      :name, :email, :password, :password_confirmation, :role,
-      company_attributes: [ :company_name, :industry, :employee_size, :address ]
-    )
+  def company_params
+    params.require(:user).require(:company_attributes).permit(:name, :industry, :employee_size, :address)
   end
 end
