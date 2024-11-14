@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     get "company_details", to: "registrations#company_details", as: "company_details"
     post "save_company_details", to: "registrations#save_company_details", as: "save_company_details"
 
+  namespace :job_seeker do
+    get "dashboard", to: "dashboard#index", as: "dashboard"
+  end
+
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
   end

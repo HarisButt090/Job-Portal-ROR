@@ -34,6 +34,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8 }
 
   accepts_nested_attributes_for :company
+  accepts_nested_attributes_for :job_seeker
+
 
   # enums
   enum :role, { job_seeker: 0, company_admin: 1, employer: 2, super_admin: 3 }
