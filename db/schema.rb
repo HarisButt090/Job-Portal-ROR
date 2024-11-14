@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "industry"
@@ -23,13 +23,13 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
   end
 
   create_table "educations", force: :cascade do |t|
-    t.integer "job_seeker_id", null: false
     t.string "institute_name"
     t.string "degree"
     t.date "start_date"
     t.date "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "job_seeker_id", null: false
     t.index ["job_seeker_id"], name: "index_educations_on_job_seeker_id"
   end
 
@@ -38,24 +38,22 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.string "position"
     t.date "start_date"
     t.date "end_date"
-    t.integer "job_seeker_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "job_seeker_id", null: false
     t.index ["job_seeker_id"], name: "index_experiences_on_job_seeker_id"
   end
 
   create_table "interviews", force: :cascade do |t|
     t.integer "status", default: 0
     t.datetime "scheduled_at"
-    t.integer "job_application_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "job_application_id", null: false
     t.index ["job_application_id"], name: "index_interviews_on_job_application_id"
   end
 
   create_table "job_applications", force: :cascade do |t|
-    t.integer "job_id", null: false
-    t.integer "job_seeker_id", null: false
     t.float "total_experience"
     t.string "last_organization"
     t.string "latest_degree"
@@ -64,26 +62,28 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "job_id", null: false
+    t.integer "job_seeker_id", null: false
     t.index ["job_id"], name: "index_job_applications_on_job_id"
     t.index ["job_seeker_id"], name: "index_job_applications_on_job_seeker_id"
   end
 
   create_table "job_seeker_skills", force: :cascade do |t|
-    t.integer "job_seeker_id", null: false
-    t.integer "skill_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "job_seeker_id", null: false
+    t.integer "skill_id", null: false
     t.index ["job_seeker_id"], name: "index_job_seeker_skills_on_job_seeker_id"
     t.index ["skill_id"], name: "index_job_seeker_skills_on_skill_id"
   end
 
   create_table "job_seekers", force: :cascade do |t|
-    t.integer "user_id", null: false
     t.string "linkedin_profile_url"
     t.string "github_portfolio_url"
     t.integer "preferred_job_type", default: 0
     t.string "city"
     t.string "address"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_job_seekers_on_user_id"
@@ -112,12 +112,12 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
   end
 
   create_table "recruiters", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "company_id", null: false
     t.string "department"
     t.date "joined_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.integer "company_id", null: false
     t.index ["company_id"], name: "index_recruiters_on_company_id"
     t.index ["user_id"], name: "index_recruiters_on_user_id"
   end
@@ -136,11 +136,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "companies", "users"
