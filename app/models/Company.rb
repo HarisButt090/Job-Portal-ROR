@@ -6,6 +6,6 @@ class Company < ApplicationRecord
   has_many :jobs, dependent: :destroy
 
   # validations
-  validates :company_name, :industry, :address, presence: true
+  validates :name, :industry, :address, presence: true
   validates :employee_size, presence: true,  numericality: { only_integer: true, greater_than: 0 }
 end

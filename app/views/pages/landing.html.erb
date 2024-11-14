@@ -3,31 +3,11 @@
     <div class="col-md-8 text-center">
       <h1 class="display-4">Welcome to the Job Portal</h1>
       <p class="lead">Your Future Starts Here</p>
-      <h3> Register Yourself </h3>
-
-      <select id="registration-option" class="form-select mb-4" onchange="handleSelectChange(this)">
-        <option value="">Choose an option</option>
-        <option value="<%= new_company_admin_registration_path %>">Register as Company Admin</option>
-      </select>
-
+      
       <div class="my-4">
-        <h3>Already have an account?</h3>
-        <p class="lead">Log in to continue</p>
+        <a href="<%= register_path %>" class="btn btn-success btn-lg shadow-lg">Sign Up</a>
         <a href="<%= new_user_session_path %>" class="btn btn-primary btn-lg shadow-lg">Login</a>
       </div>
     </div>
   </div>
 </div>
-
-<script>
-  window.addEventListener('pageshow', function() {
-    const selectElement = document.getElementById('registration-option');
-    selectElement.selectedIndex = 0;
-  });
-
-  function handleSelectChange(selectElement) {
-    if (selectElement.value) {
-      window.location.href = selectElement.value;
-    }
-  }
-</script>
