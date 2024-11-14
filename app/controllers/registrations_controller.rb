@@ -67,4 +67,8 @@ class RegistrationsController < Devise::RegistrationsController
   def after_sign_up_path_for(resource)
     verify_email_path
   end
+
+  def job_seeker_params
+    params.require(:user).require(:job_seeker_attributes).permit(:linkedin_profile_url, :github_portfolio_url, :preferred_job_type, :city, :address, :resume)
+  end
 end

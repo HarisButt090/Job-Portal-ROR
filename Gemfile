@@ -10,12 +10,14 @@ gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
 # for authentication purposes
-gem 'devise', '~> 4.9', '>= 4.9.3'
+gem "devise", "~> 4.9", ">= 4.9.3"
 
 gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
 
+# for validating file attachments
+gem "active_storage_validations"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri ], require: "debug/prelude"
@@ -28,7 +30,7 @@ end
 group :development do
   gem "web-console"
   # interface for browsing sent emails
-  gem 'letter_opener_web'
+  gem "letter_opener_web"
 end
 
 group :test do
