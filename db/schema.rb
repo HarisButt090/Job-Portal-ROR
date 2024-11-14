@@ -134,6 +134,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
     t.integer "role", default: 0
     t.string "contact_no"
     t.integer "status", default: 0
+    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "confirmation_token"

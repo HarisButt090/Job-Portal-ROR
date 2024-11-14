@@ -18,4 +18,7 @@ class PagesController < ApplicationController
 =======
 >>>>>>> d4946ac (Company Registration through devise and redirecting to dashboard)
   end
+
+  def register
+  end
 end
