@@ -1,0 +1,49 @@
+<%= form_for @user, url: create_registration_path do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Personal Details</h3>
+  <%= render 'users/registrations/personal_details', f: f %>
+
+  <h3>Job Seeker Details</h3>
+  <%= f.fields_for :job_seeker do |js| %>
+    <div class="form-group">
+      <%= js.label :linkedin_profile_url, 'LinkedIn Profile URL' %>
+      <%= js.text_field :linkedin_profile_url, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= js.label :github_portfolio_url, 'GitHub Portfolio URL' %>
+      <%= js.text_field :github_portfolio_url, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= js.label :preferred_job_type, 'Preferred Job Type' %>
+      <%= js.select :preferred_job_type, JobSeeker.preferred_job_types.keys.map { |k| [k.humanize, k] }, { prompt: 'Select Job Type' }, class: 'form-select' %>
+    </div>
+
+    <div class="form-group">
+      <%= js.label :city, 'City' %>
+      <%= js.text_field :city, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= js.label :address, 'Address' %>
+      <%= js.text_field :address, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= js.label :resume, 'Upload Resume' %>
+      <%= js.file_field :resume, class: 'form-control' %>
+    </div>
+  <% end %>
+
+  <%= f.submit "Sign Up as Job Seeker", class: 'btn btn-primary mt-3' %>
+<% end %>
