@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h1 class="display-4">Register Yourself</h1>
+
+      <select id="registration-option" class="form-select mb-4" onchange="handleSelectChange(this)">
+        <option value="">Choose an option</option>
+        <option value="<%= new_company_admin_registration_path %>">Register as Company Admin</option>
+        <option value="<%= new_job_seeker_registration_path %>">Register as Job Seeker</option>
+
+      </select>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('pageshow', function() {
+    const selectElement = document.getElementById('registration-option');
+    selectElement.selectedIndex = 0;
+  });
+
+  function handleSelectChange(selectElement) {
+    if (selectElement.value) {
+      window.location.href = selectElement.value;
+    }
+  }
+</script>

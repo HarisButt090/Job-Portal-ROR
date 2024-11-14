@@ -173,6 +173,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_103102) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
 <<<<<<< HEAD
+<<<<<<< HEAD
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
 =======
     t.string "confirmation_token"
@@ -185,6 +186,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_14_103102) do
 =======
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
 >>>>>>> 9022dbc (Company registration using namespaces)
+=======
+    t.index ["company_id"], name: "index_users_on_company_id"
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true
+>>>>>>> ea09662 (Registered job seeker and redirected to dashboard)
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
