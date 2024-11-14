@@ -9,6 +9,8 @@ gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
 gem "bcrypt", "~> 3.1.7"
+# for authentication purposes
+gem 'devise', '~> 4.9', '>= 4.9.3'
 
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -25,6 +27,8 @@ end
 
 group :development do
   gem "web-console"
+  # interface for browsing sent emails
+  gem 'letter_opener_web'
 end
 
 group :test do
