@@ -1,6 +1,7 @@
 class Admin::DashboardController < ApplicationController
   before_action :authorize_super_admin
 
+  layout "admin"
   def index
   end
 
