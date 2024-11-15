@@ -1,138 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company Admin Dashboard</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Custom styling */
-    body {
-      background-color: #f8f9fa;
-    }
-    .navbar {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .sidebar .list-group-item.active {
-      background-color: #343a40;
-      border-color: #343a40;
-    }
-    .card {
-      margin-top: 20px;
-    }
-    .card-body h2 {
-      font-size: 2rem;
-      color: #343a40;
-    }
-    .card-body p.lead {
-      font-size: 1.25rem;
-      color: #6c757d;
-    }
-  </style>
-</head>
-<body>
-
-<!-- Navbar Section -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Company Dashboard</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Post Jobs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Manage Recruiters</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Company Settings</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <span class="navbar-text text-white">Hello, <%= current_user.name %>!</span>
-        </li>
-        <li class="nav-item">
-          <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-danger ms-3") %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Dashboard Main Section -->
-<div class="container mt-5">
-  <div class="row">
-    <!-- Sidebar -->
-    <div class="col-md-3">
-      <div class="list-group sidebar">
-        <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action">Post Jobs</a>
-        <a href="#" class="list-group-item list-group-item-action">Manage Recruiters</a>
-        <a href="#" class="list-group-item list-group-item-action">Applications</a>
-        <a href="#" class="list-group-item list-group-item-action">Company Settings</a>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-body">
+    <h2>Welcome to your Dashboard!</h2>
+    <p class="lead">Here, you can manage your company's job posts, recruiters, and applications.</p>
     
-    <!-- Main Content -->
-    <div class="col-md-9">
-      <div class="card">
-        <div class="card-body">
-          <h2>Welcome to your Dashboard!</h2>
-          <p class="lead">Here, you can manage your company's job posts, employers, and settings.</p>
-          
-          <!-- Example sections for the dashboard -->
-          <div class="row mt-4">
-            <div class="col-md-6">
-              <div class="card mb-3 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Job Postings</h5>
-                  <p class="card-text">Create, edit, and manage job postings for your company.</p>
-                  <a href="#" class="btn btn-primary">Manage Jobs</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-3 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Recruiters</h5>
-                  <p class="card-text">Add, remove, and manage recruiters in your company.</p>
-                  <a href="#" class="btn btn-primary">Manage Recruiters</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-3 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Applications</h5>
-                  <p class="card-text">View and manage job applications received.</p>
-                  <a href="#" class="btn btn-primary">View Applications</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card mb-3 shadow-sm">
-                <div class="card-body">
-                  <h5 class="card-title">Company Settings</h5>
-                  <p class="card-text">Update company information and settings.</p>
-                  <a href="#" class="btn btn-primary">Settings</a>
-                </div>
-              </div>
-            </div>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Job Postings</h5>
+            <p class="card-text">Create, edit, and manage job postings for your company.</p>
+            <a href="#" class="btn btn-primary">Manage Jobs</a>
           </div>
-
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Recruiters</h5>
+            <p class="card-text">Add, remove, and manage recruiters in your company.</p>
+            <a href="#" class="btn btn-primary">Manage Recruiters</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Applications</h5>
+            <p class="card-text">View and manage job applications received.</p>
+            <a href="#" class="btn btn-primary">View Applications</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Company Settings</h5>
+            <p class="card-text">Update company information and settings.</p>
+            <a href="#" class="btn btn-primary">Settings</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
