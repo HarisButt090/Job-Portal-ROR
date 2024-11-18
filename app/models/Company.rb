@@ -11,10 +11,5 @@ class Company < ApplicationRecord
 
   # validations
   validates :name, :industry, :address, presence: true
-<<<<<<< HEAD
   validates :employee_size, presence: true, numericality: { only_integer: true, greater_than: 0, message: "Employee size must be a positive integer."}
 end
-=======
-  validates :employee_size, presence: true,  numericality: { only_integer: true, greater_than: 0 }
-end
->>>>>>> f09ceb0 (Made changes in the company registration)

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
 
   root "pages#landing"
-  get "register", to: "pages#register", as: "register"
 
   devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
 
