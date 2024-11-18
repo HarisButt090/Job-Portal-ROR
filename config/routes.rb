@@ -1,29 +1,21 @@
 Rails.application.routes.draw do
   root "pages#landing"
-  get "register", to: "pages#register", as: "register"
 
   devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
 
   devise_scope :user do
-    get "register/company_admin", to: "registrations#new_company_admin", as: "new_company_admin_registration"
-    post "register", to: "registrations#create", as: "create_registration"
-    get "verification_success", to: "registrations#verification_success", as: "verification_success"
+    post "users/update_role", to: "registrations#update_role", as: :update_role
+    get "verify_email", to: "registrations#verify_email", as: "verify_email"
   end
 
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "up", to: "rails/health#show", as: :rails_health_check
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  get "service-worker", to: "rails/pwa#service_worker", as: :pwa_service_worker
+  get "manifest", to: "rails/pwa#manifest", as: :pwa_manifest
 
-  # Render dynamic PWA files from app/views/pwa/*
-  get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
