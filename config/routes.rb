@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
 
   devise_scope :user do
-    post "users/update_role", to: "registrations#update_role", as: :update_role
+    get "registrations/role_details", to: "registrations#role_details", as: :role_details
     get "verify_email", to: "registrations#verify_email", as: "verify_email"
   end
 
