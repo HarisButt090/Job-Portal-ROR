@@ -1,0 +1,49 @@
+<%= form_for @job_seeker, url: save_job_seeker_details_path(user_id: @user.id) do |js| %>
+  <% if @job_seeker.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @job_seeker.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>Job Seeker Details</h3>
+  <div class="form-group">
+    <%= js.label :linkedin_profile_url, 'LinkedIn Profile URL' %>
+    <%= js.text_field :linkedin_profile_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= js.label :github_portfolio_url, 'GitHub Portfolio URL' %>
+    <%= js.text_field :github_portfolio_url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= js.label :preferred_job_type, 'Preferred Job Type' %>
+    <%= js.select :preferred_job_type, JobSeeker.preferred_job_types.keys.map { |k| [k.humanize, k] }, { prompt: 'Select Job Type' }, class: 'form-select' %>
+  </div>
+
+  <div class="form-group">
+    <%= js.label :city, 'City' %>
+    <%= js.text_field :city, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= js.label :address, 'Address' %>
+    <%= js.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= js.label :resume, 'Upload Resume' %>
+    <%= js.file_field :resume, class: 'form-control' %>
+    <% if @job_seeker.errors[:resume].any? %>
+      <div class="error-message">
+        <%= @job_seeker.errors[:resume].join(", ") %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= js.submit "Save Details", class: 'btn btn-primary mt-3' %>
+<% end %>
