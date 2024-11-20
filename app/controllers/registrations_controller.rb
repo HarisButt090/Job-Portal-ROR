@@ -26,6 +26,22 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def job_seeker_details
+    @user = User.find(params[:user_id])
+    @job_seeker = @user.build_job_seeker
+  end
+
+  def save_job_seeker_details
+    user = User.find(params[:user_id])
+    @job_seeker = user.build_job_seeker(job_seeker_params)
+
+    if @job_seeker.save
+      redirect_to verify_email_path, notice: "Job seeker details saved successfully!"
+    else
+      render :job_seeker_details, alert: "There was an error saving job seeker details."
+    end
+  end
+
   def verify_email
     render template: "/devise/registrations/verify_email"
   end
@@ -36,6 +52,8 @@ class RegistrationsController < Devise::RegistrationsController
     case user.role
     when "company_admin"
       redirect_to company_details_path(user_id: user.id)
+    when "job_seeker"
+      redirect_to job_seeker_details_path(user_id: user.id)
     else
       handle_default_redirect
     end
@@ -62,13 +80,13 @@ class RegistrationsController < Devise::RegistrationsController
     params.require(:company).permit(:name, :industry, :employee_size, :address)
   end
 
+  def job_seeker_params
+    params.require(:job_seeker).permit(:linkedin_profile_url, :github_portfolio_url, :preferred_job_type, :city, :address, :resume)
+  end
+
   protected
 
   def after_sign_up_path_for(resource)
     verify_email_path
-  end
-
-  def job_seeker_params
-    params.require(:user).require(:job_seeker_attributes).permit(:linkedin_profile_url, :github_portfolio_url, :preferred_job_type, :city, :address, :resume)
   end
 end
