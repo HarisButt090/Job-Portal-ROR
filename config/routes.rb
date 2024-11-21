@@ -21,13 +21,16 @@ Rails.application.routes.draw do
 
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
-    resources :jobs, only: [:new, :create, :show, :drafts, :edit, :update, :destroy, :publish] do
+    resources :jobs, only: [:new, :create, :show, :drafts, :edit, :update, :destroy, :publish, :close, :open] do
       collection do
         get :drafts
         get :manage
+        get :archived
       end
       member do
         patch :publish
+        patch :close
+        patch :open
       end
   
     end
