@@ -1,4 +1,4 @@
-<h1>Draft Jobs</h1>
+<h1>Manage Jobs</h1>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -10,11 +10,11 @@
       <th>Edit</th>
       <th>Delete</th>
       <th>View Job</th>
-      <th>Publish</th>
+      <th>View Applications</th>
     </tr>
   </thead>
   <tbody>
-    <% @draft_jobs.each do |job| %>
+    <% @active_jobs.each do |job| %>
       <tr>
         <td><%= job.title %></td>
         <td><%= job.city %></td>
@@ -24,24 +24,20 @@
           <%= link_to 'Edit', edit_company_job_path(job), class: 'btn btn-primary btn-sm' %>
         </td>
         <td>
-            <%= button_to 'Delete', company_job_path(job), 
+          <%= button_to 'Delete', company_job_path(job), 
                         method: :delete, 
                         data: { confirm: 'Are you sure?' }, 
                         class: 'btn btn-danger btn-sm' %>
         </td>
-
         <td>
           <%= link_to 'View Job', company_job_path(job), class: 'btn btn-info btn-sm' %>
         </td>
         <td>
-                <%= button_to 'Publish', publish_company_job_path(job), 
-                            method: :patch, 
-                            data: { confirm: 'Are you sure you want to publish this job?' }, 
-                            class: 'btn btn-success btn-sm' %>
+          <%= button_tag 'View Applications', 
+                         class: 'btn btn-warning btn-sm', 
+                         disabled: true %>
         </td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
- 
