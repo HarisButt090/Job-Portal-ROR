@@ -1,0 +1,32 @@
+<h1>Archived Jobs</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>City</th>
+      <th>Job Type</th>
+      <th>Salary</th>
+      <th>View Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @archived_jobs.each do |job| %>
+      <tr>
+        <td><%= job.title %></td>
+        <td><%= job.city %></td>
+        <td><%= job.job_type.capitalize %></td>
+        <td><%= number_to_currency(job.salary, unit: 'PKR ') %></td>
+        <td>
+          <%= link_to 'View Job', company_job_path(job), class: 'btn btn-info btn-sm' %>
+        </td>
+        <td>
+          <%= button_to 'Open Job', open_company_job_path(job), 
+          method: :patch, 
+          class: 'btn btn-success btn-sm', 
+          data: { confirm: 'Are you sure you want to reopen this job?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

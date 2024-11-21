@@ -37,6 +37,12 @@
                          class: 'btn btn-warning btn-sm', 
                          disabled: true %>
         </td>
+        <td>
+          <%= button_to 'Close Job', close_company_job_path(job), 
+                        method: :patch, 
+                        data: { confirm: 'Are you sure you want to close this job?' }, 
+                        class: 'btn btn-secondary btn-sm' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
