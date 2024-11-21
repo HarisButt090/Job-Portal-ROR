@@ -1,0 +1,25 @@
+<h1>Job Details</h1>
+
+<div class="card">
+  <div class="card-header">
+    <h3><%= @job.title %></h3>
+  </div>
+  <div class="card-body">
+    <p><strong>Location:</strong> <%= @job.city %></p>
+    <p><strong>Job Type:</strong> <%= @job.job_type.capitalize %></p>
+    <p><strong>Salary:</strong> <%= number_to_currency(@job.salary, unit: 'PKR ') %></p>
+    <p><strong>Job Description:</strong></p>
+    <p><%= @job.job_description %></p>
+    <p><strong>Responsibilities:</strong></p>
+    <p><%= @job.responsibilities %></p>
+    <p><strong>Requirements:</strong></p>
+    <p><%= @job.requirements %></p>
+    <p><strong>Qualifications:</strong></p>
+    <p><%= @job.qualification %></p>
+    <p><strong>Experience:</strong> <%= @job.experience %> years</p>
+  </div>
+</div>
+
+<div class="mt-3">
+  <%= link_to 'Back to Drafts', drafts_company_jobs_path, class: 'btn btn-secondary' %>
+</div>

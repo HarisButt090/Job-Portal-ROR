@@ -19,13 +19,13 @@
             <a class="nav-link" href="#">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Post Jobs</a>
+            <%= link_to "Post Jobs", new_company_job_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Manage Jobs</a>
           </li>  
           <li class="nav-item">
-            <a class="nav-link" href="#">Draft Jobs</a>
+            <%= link_to 'Drafts', drafts_company_jobs_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Archived</a>
@@ -51,17 +51,7 @@
 
   <div class="container mt-5">
     <div class="row">
-      <div class="col-md-3">
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
-          <a href="#" class="list-group-item list-group-item-action">Post Jobs</a>
-          <a href="#" class="list-group-item list-group-item-action">Manage Jobs</a>
-          <a href="#" class="list-group-item list-group-item-action">Draft Jobs</a>
-          <a href="#" class="list-group-item list-group-item-action">Archived </a>
-          <a href="#" class="list-group-item list-group-item-action">Add Recruiter</a>
-          <a href="#" class="list-group-item list-group-item-action">Manage Recruiters</a>
-        </div>
-      </div>
+      
 
       <div class="col-md-9">
         <%= yield %>
