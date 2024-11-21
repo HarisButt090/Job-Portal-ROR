@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
-    resources :jobs, only: [:new, :create, :show, :drafts] do
+    resources :jobs, only: [:new, :create, :show, :drafts, :edit, :update, :destroy] do
       collection do
         get :drafts
       end
