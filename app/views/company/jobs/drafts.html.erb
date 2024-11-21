@@ -7,6 +7,8 @@
       <th>City</th>
       <th>Job Type</th>
       <th>Salary</th>
+      <th>Edit</th>
+      <th>Delete</th>
       <th>View Job</th>
     </tr>
   </thead>
@@ -17,6 +19,16 @@
         <td><%= job.city %></td>
         <td><%= job.job_type.capitalize %></td>
         <td><%= number_to_currency(job.salary, unit: 'PKR ') %></td>
+        <td>
+          <%= link_to 'Edit', edit_company_job_path(job), class: 'btn btn-primary btn-sm' %>
+        </td>
+        <td>
+            <%= button_to 'Delete', company_job_path(job), 
+                        method: :delete, 
+                        data: { confirm: 'Are you sure?' }, 
+                        class: 'btn btn-danger btn-sm' %>
+        </td>
+
         <td>
           <%= link_to 'View Job', company_job_path(job), class: 'btn btn-info btn-sm' %>
         </td>
