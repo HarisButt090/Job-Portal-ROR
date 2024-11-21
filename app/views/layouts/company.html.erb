@@ -16,13 +16,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">Dashboard</a>
+          <%= link_to "Dashboard", company_dashboard_path, class: "nav-link" %>
+          </li>
           </li>
           <li class="nav-item">
             <%= link_to "Post Jobs", new_company_job_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Manage Jobs</a>
+            <%= link_to 'Manage Jobs', manage_company_jobs_path, class: "nav-link" %>
           </li>  
           <li class="nav-item">
             <%= link_to 'Drafts', drafts_company_jobs_path, class: "nav-link" %>

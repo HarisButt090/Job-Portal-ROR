@@ -1,6 +1,6 @@
 class Company::JobsController < ApplicationController
   before_action :set_company
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :publish]
   layout "company"
 
   def new
@@ -31,7 +31,7 @@ class Company::JobsController < ApplicationController
 
   def update
     if @job.update(job_params)
-      redirect_to drafts_company_jobs_path, notice: 'Job was successfully updated.'
+      redirect_to company_dashboard_path, notice: 'Job was successfully updated.'
     else
       flash.now[:alert] = 'Unable to update job. Please check the errors below.'
       render :edit
@@ -41,13 +41,24 @@ class Company::JobsController < ApplicationController
   def destroy
     Rails.logger.debug "Destroy action triggered for job ID: #{@job.id}"
     if @job.destroy
-      redirect_to drafts_company_jobs_path, notice: 'Job was successfully deleted.'
+      redirect_to company_dashboard_path, notice: 'Job was successfully deleted.'
     else
-      redirect_to drafts_company_jobs_path, alert: 'Failed to delete the job.'
+      redirect_to company_dashboard_path, alert: 'Failed to delete the job.'
     end
   end
-  
 
+  def publish
+    if @job.update(displayed_status: 1, job_status: 1)
+      redirect_to drafts_company_jobs_path, notice: 'Job was successfully published and is now active.'
+    else
+      redirect_to drafts_company_jobs_path, alert: 'Failed to publish the job. Please try again.'
+    end
+  end
+ 
+  def manage
+    @active_jobs = @company.jobs.where(displayed_status: 1)
+  end
+  
   private
 
   def set_company
