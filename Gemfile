@@ -19,6 +19,8 @@ gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
 
+gem 'pry'
+
 # for validating file attachments
 gem "active_storage_validations"
 

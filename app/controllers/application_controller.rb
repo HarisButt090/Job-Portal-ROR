@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     elsif resource.super_admin?
       admin_dashboard_path
     elsif resource.employer?
-      employer_dashboard_path
+      company_employer_dashboard_path
     else
       root_path
     end

@@ -19,12 +19,11 @@ Rails.application.routes.draw do
     get "dashboard", to: "dashboard#index", as: "dashboard"
   end
 
-  namespace :employer do
-    get "dashboard", to: "dashboard#index", as: "dashboard"
-  end
-
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
+    
+    get "employer_dashboard", to: "dashboard#show_employer_dashboard", as: "employer_dashboard"
+
     resources :jobs, only: [:new, :create, :show, :drafts, :edit, :update, :destroy, :publish, :close, :open] do
       collection do
         get :drafts
@@ -37,11 +36,11 @@ Rails.application.routes.draw do
         patch :open
       end
     end
+    
     resources :employers, only: [:new , :create]
   end
 
   get "up", to: "rails/health#show", as: :rails_health_check
-
   get "service-worker", to: "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest", to: "rails/pwa#manifest", as: :pwa_manifest
 
