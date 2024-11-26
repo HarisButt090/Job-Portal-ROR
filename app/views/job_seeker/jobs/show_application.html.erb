@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h1 class="card-title mb-0">Application Details</h1>
+    </div>
+    <div class="card-body">
+      <p><strong>Job Title:</strong> <%= @job_application.job.title %></p>
+      <p><strong>City:</strong> <%= @job_application.job.city %></p>
+      <p><strong>Status:</strong> 
+        <span class="badge <%= @job_application.status == 'pending' ? 'bg-warning' : @job_application.status == 'accepted' ? 'bg-success' : 'bg-danger' %>">
+          <%= @job_application.status.humanize %>
+        </span>
+      </p>
+      <p><strong>Total Experience:</strong> <%= @job_application.total_experience %> years</p>
+      <p><strong>Last Organization:</strong> <%= @job_application.last_organization %></p>
+      <p><strong>Latest Degree:</strong> <%= @job_application.latest_degree %></p>
+      <p><strong>Graduated Year:</strong> <%= @job_application.graduated_year %></p>
+      <p><strong>CV:</strong> 
+        <% if @job_application.cv.attached? %>
+          <%= link_to "Download CV", rails_blob_path(@job_application.cv, disposition: "attachment"), class: "btn btn-success btn-sm" %>
+        <% else %>
+          <span class="text-muted">No CV uploaded</span>
+        <% end %>
+      </p>
+      <%= link_to "Back to Applications", job_seeker_my_applications_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+</div>

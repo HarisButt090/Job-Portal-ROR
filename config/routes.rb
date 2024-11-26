@@ -18,15 +18,22 @@ Rails.application.routes.draw do
   namespace :job_seeker do
     get "dashboard", to: "dashboard#index", as: "dashboard"
 
-    resources :jobs, only: [:show]
+    resources :jobs, only: [:show] do
+      member do
+        get :apply
+        post :submit_application
+      end
+    end
+
+    get "applications", to: "jobs#my_applications", as: "my_applications"
+    get 'applications/:id', to: 'jobs#show_application', as: 'application'
+
   end
   
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
-    
-    get "employer_dashboard", to: "dashboard#show_employer_dashboard", as: "employer_dashboard"
 
-    resources :jobs, only: [:new, :create, :show, :drafts, :edit, :update, :destroy, :publish, :close, :open] do
+    resources :jobs, only: [:new, :create, :show, :edit, :update, :destroy] do
       collection do
         get :drafts
         get :manage
@@ -38,8 +45,8 @@ Rails.application.routes.draw do
         patch :open
       end
     end
-    
-    resources :employers, only: [:new , :create]
+
+    resources :employers, only: [:new, :create]
   end
 
   get "up", to: "rails/health#show", as: :rails_health_check
