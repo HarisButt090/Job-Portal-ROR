@@ -1,0 +1,19 @@
+<h1>Welcome to Our Company!</h1>
+
+<p>Hello <%= @resource.name %>,</p>
+
+<p>
+  You have been added as an employer for <%= @resource.company&.name || 'our company' %>.
+</p>
+
+<p>
+  Please click the link below to set up your password and activate your account:
+</p>
+
+<p>
+  <%= link_to 'Set Up Password', accept_user_invitation_url(@resource, invitation_token: @token) %>
+</p>
+
+<p>If you have any questions, feel free to contact us.</p>
+
+<p>Best regards,<br>The Company Team</p>

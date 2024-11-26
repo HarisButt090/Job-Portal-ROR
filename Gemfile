@@ -12,9 +12,14 @@ gem "bcrypt", "~> 3.1.7"
 # for authentication purposes
 gem "devise", "~> 4.9", ">= 4.9.3"
 
+# for sending invitation to set passwords
+gem 'devise_invitable'
+
 gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
+
+gem 'pry'
 
 # for validating file attachments
 gem "active_storage_validations"

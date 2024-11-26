@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
       company_dashboard_path
     elsif resource.super_admin?
       admin_dashboard_path
+    elsif resource.employer?
+      company_employer_dashboard_path
     else
       root_path
     end
