@@ -17,5 +17,5 @@ class JobSeeker < ApplicationRecord
   validates :resume, attached: true, content_type: [ "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ], size: { less_than: 5.megabytes }
 
   # enums
-  enum preferred_job_type: { on_site: 0, hybrid: 1, remote: 2 }
+  enum :preferred_job_type, { on_site: 0, hybrid: 1, remote: 2 }
 end
