@@ -17,8 +17,10 @@ Rails.application.routes.draw do
 
   namespace :job_seeker do
     get "dashboard", to: "dashboard#index", as: "dashboard"
-  end
 
+    resources :jobs, only: [:show]
+  end
+  
   namespace :company do
     get "dashboard", to: "dashboard#index", as: "dashboard"
     

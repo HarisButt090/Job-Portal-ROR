@@ -4,5 +4,6 @@
     layout "job_seeker"
   
     def index
+      @jobs = Job.where(displayed_status: 'published')
     end
   end
