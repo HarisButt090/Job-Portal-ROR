@@ -19,7 +19,6 @@ class User < ApplicationRecord
   # Callbacks
   before_update :accept_invitation, if: :password_and_invitation_valid?
 
-  # Devise hook to update status after login
   def after_database_authentication
     Rails.logger.info("after_database_authentication hook triggered.")
     if invitation_accepted_at.present? && status == "non_active"
@@ -27,14 +26,24 @@ class User < ApplicationRecord
     end
   end
 
-  # Check if the invitation is pending
   def invitation_pending?
     invitation_accepted_at.nil?
   end
 
+  # Method to retrieve company based on role
+  def company
+    if role == "company_admin"
+      Company.find_by(user_id: id)
+    elsif role == "employer"
+      employer&.company
+    else
+      nil
+    end
+  end
+  
+
   private
 
-  # Callback to set invitation acceptance details
   def password_and_invitation_valid?
     Rails.logger.info("Checking invitation and password conditions...")
     Rails.logger.info("invitation_accepted_at: #{invitation_accepted_at}, saved_change_to_encrypted_password?: #{saved_change_to_encrypted_password?}")
@@ -47,7 +56,6 @@ class User < ApplicationRecord
     self.status = :active
   end
 
-  # Ensure password validation is required only for new records or password changes
   def password_required?
     new_record? || password.present?
   end
