@@ -24,6 +24,8 @@ gem 'pry'
 # for validating file attachments
 gem "active_storage_validations"
 
+gem 'graphql'
+
 group :development, :test do
   gem "debug", platforms: %i[ mri ], require: "debug/prelude"
 
@@ -36,6 +38,9 @@ group :development do
   gem "web-console"
   # interface for browsing sent emails
   gem "letter_opener_web"
+  # interface to tets your API's
+  gem 'graphiql-rails'
+  gem 'faker'
 end
 
 group :test do
