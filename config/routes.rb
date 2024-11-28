@@ -43,6 +43,11 @@ Rails.application.routes.draw do
         patch :publish
         patch :close
         patch :open
+        get :show_applications
+        get :view_application
+        patch :accept_application
+        patch :reject_application
+
       end
     end
 

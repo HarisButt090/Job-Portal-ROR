@@ -1,6 +1,7 @@
 class Company::JobsController < ApplicationController
   before_action :set_company
-  before_action :set_job, only: [:show, :edit, :update, :destroy, :publish, :close, :open]
+  before_action :set_job, only: [:show, :edit, :update, :destroy, :publish, :close, :open, :view_application]
+  before_action :set_job_application, only: [:view_application, :accept_application, :reject_application]
   layout -> { current_user.company_admin? ? "company" : "employer" }
 
   def new
@@ -79,7 +80,38 @@ class Company::JobsController < ApplicationController
     end
   end
 
+  def show_applications
+    @job = Job.find(params[:id])
+    @job_applications = @job.job_applications
+  end
+  
+  def view_application
+    if @job_application.status == 'pending'
+      @job_application.update(status: 1)
+    end
+  end
+
+  def accept_application
+    if @job_application.update(status: 'accepted')
+      redirect_to show_applications_company_job_path, notice: 'Application accepted.'
+    else
+      redirect_to show_applications_company_job_path, alert: 'Failed to accept the application.'
+    end
+  end
+
+  def reject_application
+    if @job_application.update(status: 'denied')
+      redirect_to show_applications_company_job_path, notice: 'Application rejected.'
+    else
+      redirect_to show_applications_company_job_path, alert: 'Failed to reject the application.'
+    end
+  end
+
   private
+
+  def set_job_application
+    @job_application = JobApplication.find(params[:application_id]) # Assuming `application_id` is passed in the URL
+  end
 
   def set_company
     @company = current_user.company
@@ -116,3 +148,4 @@ class Company::JobsController < ApplicationController
                                 :requirements, :experience, :salary, :qualification, :job_type)
   end
 end
+	
