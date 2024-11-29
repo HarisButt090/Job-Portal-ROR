@@ -33,10 +33,11 @@
           <%= link_to 'View Job', company_job_path(job), class: 'btn btn-info btn-sm' %>
         </td>
         <td>
-          <%= button_tag 'View Applications', 
-                         class: 'btn btn-warning btn-sm', 
-                         disabled: true %>
+           <%= link_to 'View Applications', show_applications_company_job_path(job), 
+                    class: 'btn btn-warning btn-sm'
+                    %>
         </td>
+
         <td>
           <%= button_to 'Close Job', close_company_job_path(job), 
                         method: :patch, 

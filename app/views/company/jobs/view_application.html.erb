@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h3>Application Details</h3>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Application for: <%= @job.title %></h5>
+      <p><strong>Applicant Name:</strong> <%= @job_application.job_seeker.user.name %></p>
+      <p><strong>Latest Organization:</strong> <%= @job_application.last_organization %></p>
+      <p><strong>Latest Degree:</strong> <%= @job_application.latest_degree %></p>
+      <p><strong>Experience:</strong> <%= @job_application.total_experience %></p>
+      <p><strong>Graduated year:</strong> <%= @job_application.graduated_year %></p>
+      
+      <% if @job_application.cv.attached? %>
+        <p>
+          <strong>Resume:</strong>
+          <%= link_to 'Download CV', rails_blob_path(@job_application.cv, disposition: 'attachment'), class: 'btn btn-primary' %>
+        </p>
+      <% end %>
+
+    </div>
+  </div>
+
+  <%= link_to 'Back to Applications', show_applications_company_job_path(@job), class: 'btn btn-secondary mt-3' %>
+</div>

@@ -1,0 +1,55 @@
+<div class="container mt-4">
+  <h3 class="mb-4">Pending Applications</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+      <thead class="table-primary">
+        <tr>
+          <th>Applicant Name</th>
+          <th>Job Title</th>
+          <th>Status</th>
+          <th>Scheduled Interview</th> <!-- New Column -->
+          <th>View Application</th>
+          <th>Accept Application</th>
+          <th>Reject Application</th>
+          <th>Schedule Interview</th> <!-- New Column -->
+        </tr>
+      </thead>
+      <tbody>
+        <% @job_applications.each do |application| %>
+          <tr>
+            <td><%= application.job_seeker.user.name %></td>
+            <td><%= application.job.title %></td>
+            <td><%= application.status.capitalize %></td>
+            <td>
+              <% if application.interviews.present? %>
+                <%= application.interviews.last.scheduled_at.strftime('%Y-%m-%d %H:%M') %>
+              <% else %>
+                Not Scheduled
+              <% end %>
+            </td>
+            <td>
+              <div class="btn-group" role="group" aria-label="Application Actions">
+                <%= link_to 'View', view_application_company_job_path(@job, application_id: application.id), class: 'btn btn-info' %>
+              </div>
+            </td>
+            <td>
+              <%= button_to 'Accept', accept_application_company_job_path(@job, application_id: application.id), method: :patch, class: 'btn btn-success' %>
+            </td>
+            <td>
+              <%= button_to 'Reject', reject_application_company_job_path(@job, application_id: application.id), method: :patch, class: 'btn btn-danger' %>
+            </td>
+            <td>
+              <% if application.status == 'accepted' && application.interviews.empty? %>
+                <%= link_to 'Schedule Interview', schedule_interview_company_job_path(@job, application_id: application.id), class: 'btn btn-warning' %>
+              <% elsif application.interviews.any? %>
+                <button class="btn btn-secondary" disabled>Already Scheduled</button>
+              <% else %>
+                <button class="btn btn-secondary" disabled>Not Accepted</button>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
