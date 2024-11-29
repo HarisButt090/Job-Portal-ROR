@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <h3>Schedule Interview</h3>
+  <%= form_with model: @interview, 
+                url: create_interview_company_job_path(@job, application_id: @job_application.id), 
+                local: true do |f| %>
+    <!-- Hidden field to include application_id -->
+    <%= hidden_field_tag :application_id, @job_application.id %>
+
+    <div class="form-group">
+      <%= f.label :scheduled_at, 'Interview Date & Time' %>
+      <%= f.datetime_select :scheduled_at, class: 'form-control' %>
+    </div>
+    
+    <%= f.submit 'Schedule Interview', class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>

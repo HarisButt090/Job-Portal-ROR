@@ -17,11 +17,6 @@
         </p>
       <% end %>
 
-      <!-- Accept and Reject buttons -->
-      <div class="mt-3">
-        <%= button_to 'Accept Application', accept_application_company_job_path(@job, application_id: @job_application.id), method: :patch, class: 'btn btn-success' %>
-        <%= button_to 'Reject Application', reject_application_company_job_path(@job, application_id: @job_application.id), method: :patch, class: 'btn btn-danger' %>
-      </div>
     </div>
   </div>
 

@@ -27,7 +27,6 @@ Rails.application.routes.draw do
 
     get "applications", to: "jobs#my_applications", as: "my_applications"
     get 'applications/:id', to: 'jobs#show_application', as: 'application'
-
   end
   
   namespace :company do
@@ -47,7 +46,8 @@ Rails.application.routes.draw do
         get :view_application
         patch :accept_application
         patch :reject_application
-
+        get :schedule_interview
+        post :create_interview
       end
     end
 

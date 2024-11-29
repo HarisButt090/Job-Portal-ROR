@@ -1,7 +1,15 @@
 class Company::JobsController < ApplicationController
   before_action :set_company
-  before_action :set_job, only: [:show, :edit, :update, :destroy, :publish, :close, :open, :view_application]
-  before_action :set_job_application, only: [:view_application, :accept_application, :reject_application]
+  before_action :set_job, only: [
+    :show, :edit, :update, :destroy, :publish, :close, :open,
+    :view_application, :accept_application, :reject_application,
+    :show_applications, :schedule_interview, :create_interview
+  ]
+  before_action :set_job_application, only: [
+    :view_application, :accept_application, :reject_application,
+    :schedule_interview, :create_interview
+  ]
+
   layout -> { current_user.company_admin? ? "company" : "employer" }
 
   def new
@@ -25,11 +33,9 @@ class Company::JobsController < ApplicationController
     @draft_jobs = jobs_scope.where(displayed_status: 0, job_status: 0)
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @job.update(job_params)
@@ -81,36 +87,66 @@ class Company::JobsController < ApplicationController
   end
 
   def show_applications
-    @job = Job.find(params[:id])
     @job_applications = @job.job_applications
   end
-  
+
   def view_application
+    # Ensure that we only update status to 'screened' for pending applications
     if @job_application.status == 'pending'
-      @job_application.update(status: 1)
+      @job_application.update(status: 'screened')
     end
   end
 
   def accept_application
     if @job_application.update(status: 'accepted')
-      redirect_to show_applications_company_job_path, notice: 'Application accepted.'
+      redirect_to show_applications_company_job_path(@job), notice: 'Application accepted.'
     else
-      redirect_to show_applications_company_job_path, alert: 'Failed to accept the application.'
+      redirect_to show_applications_company_job_path(@job), alert: 'Failed to accept the application.'
     end
   end
 
   def reject_application
+
+    if @job_application.status == 'accepted'
+      if @job_application.interviews.any?
+        @job_application.interviews.destroy_all
+      end
+    end
+
     if @job_application.update(status: 'denied')
-      redirect_to show_applications_company_job_path, notice: 'Application rejected.'
+      redirect_to show_applications_company_job_path(@job), notice: 'Application rejected.'
     else
-      redirect_to show_applications_company_job_path, alert: 'Failed to reject the application.'
+      redirect_to show_applications_company_job_path(@job), alert: 'Failed to reject the application.'
+    end
+  end
+
+  def schedule_interview
+    if @job_application.status == 'accepted'
+      @interview = @job_application.interviews.build
+    else
+      redirect_to show_applications_company_job_path(@job), alert: 'You can only schedule an interview for accepted applications.'
+    end
+  end
+
+  def create_interview
+    @interview = @job_application.interviews.build(interview_params)
+    if @interview.save
+      redirect_to show_applications_company_job_path(@job), notice: 'Interview scheduled successfully.'
+    else
+      flash.now[:alert] = 'Error scheduling interview. Please check the input.'
+      render :schedule_interview
     end
   end
 
   private
 
   def set_job_application
-    @job_application = JobApplication.find(params[:application_id]) # Assuming `application_id` is passed in the URL
+    @job_application = JobApplication.find_by(id: params[:application_id], job: @job)
+    redirect_to show_applications_company_job_path(@job), alert: 'Application not found.' unless @job_application
+  end
+
+  def interview_params
+    params.require(:interview).permit(:scheduled_at)
   end
 
   def set_company
@@ -148,4 +184,3 @@ class Company::JobsController < ApplicationController
                                 :requirements, :experience, :salary, :qualification, :job_type)
   end
 end
-	
