@@ -37,6 +37,7 @@ Rails.application.routes.draw do
         get :drafts
         get :manage
         get :archived
+        get :applications_overview
       end
       member do
         patch :publish
@@ -48,6 +49,7 @@ Rails.application.routes.draw do
         patch :reject_application
         get :schedule_interview
         post :create_interview
+        patch :update_interview_status
       end
     end
 
