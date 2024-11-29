@@ -29,7 +29,7 @@ class JobSeeker::JobsController < ApplicationController
   end
 
   def my_applications
-    @applications = current_user.job_seeker.job_applications.includes(:job)
+    @applications = current_user.job_seeker.job_applications.includes(:job, :interviews)
   end
 
   def show_application

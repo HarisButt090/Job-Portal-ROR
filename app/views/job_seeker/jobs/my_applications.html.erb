@@ -5,6 +5,8 @@
       <tr>
         <th>Job Title</th>
         <th>City</th>
+        <th>Interview Status</th>
+        <th>Interview Details</th>
         <th>Status</th>
         <th>Actions</th>
       </tr>
@@ -14,6 +16,22 @@
         <tr>
           <td><%= application.job.title %></td>
           <td><%= application.job.city %></td>
+          <td>
+            <% if application.interviews.any? %>
+              <span class="badge <%= application.interviews.last.status == 'scheduled' ? 'bg-info' : 'bg-secondary' %>">
+                <%= application.interviews.last.status.humanize %>
+              </span>
+            <% else %>
+              <span class="badge bg-warning">No Interview Scheduled</span>
+            <% end %>
+          </td>
+          <td>
+            <% if application.interviews.any? && application.interviews.last.scheduled_at.present? %>
+              <%= application.interviews.last.scheduled_at %>
+            <% else %>
+              No details available
+            <% end %>
+          </td>
           <td>
             <span class="badge <%= application.status == 'pending' ? 'bg-warning' : application.status == 'accepted' ? 'bg-success' : 'bg-danger' %>">
               <%= application.status.humanize %>
