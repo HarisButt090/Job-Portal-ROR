@@ -34,7 +34,12 @@
           <li class="nav-item">
             <%= link_to 'Add Recruiter', new_company_employer_path, class: "nav-link" %>
           </li>
-          
+          <% if current_user.company_admin? || current_user.employer? %>
+             <li>
+                <%= link_to 'Interviews', applications_overview_company_jobs_path , class: "nav-link" %>
+             </li>
+          <% end %>
+
           <li class="nav-item">
             <a class="nav-link" href="#">Manage Recruiters</a>
           </li>

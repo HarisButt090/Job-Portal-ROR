@@ -3,12 +3,14 @@ class Company::JobsController < ApplicationController
   before_action :set_job, only: [
     :show, :edit, :update, :destroy, :publish, :close, :open,
     :view_application, :accept_application, :reject_application,
-    :show_applications, :schedule_interview, :create_interview
+    :show_applications, :schedule_interview, :create_interview,
+    :update_interview_status
   ]
   before_action :set_job_application, only: [
     :view_application, :accept_application, :reject_application,
     :schedule_interview, :create_interview
   ]
+  before_action :set_interview, only: [:update_interview_status]
 
   layout -> { current_user.company_admin? ? "company" : "employer" }
 
@@ -91,7 +93,6 @@ class Company::JobsController < ApplicationController
   end
 
   def view_application
-    # Ensure that we only update status to 'screened' for pending applications
     if @job_application.status == 'pending'
       @job_application.update(status: 'screened')
     end
@@ -106,11 +107,8 @@ class Company::JobsController < ApplicationController
   end
 
   def reject_application
-
     if @job_application.status == 'accepted'
-      if @job_application.interviews.any?
-        @job_application.interviews.destroy_all
-      end
+      @job_application.interviews.destroy_all if @job_application.interviews.any?
     end
 
     if @job_application.update(status: 'denied')
@@ -138,6 +136,22 @@ class Company::JobsController < ApplicationController
     end
   end
 
+  def applications_overview
+    @job_applications = @company.jobs.includes(:job_applications).flat_map(&:job_applications)
+  end
+
+  def update_interview_status
+    job = Job.find(params[:id])
+    interview = job.job_applications.flat_map(&:interviews).find { |i| i.id == params[:interview_id].to_i }
+  
+    if interview
+      interview.update(status: params[:status])
+      redirect_to company_job_path(job), notice: 'Interview status updated.'
+    else
+      redirect_to company_job_path(job), alert: 'Interview not found.'
+    end
+  end
+  
   private
 
   def set_job_application
@@ -145,8 +159,11 @@ class Company::JobsController < ApplicationController
     redirect_to show_applications_company_job_path(@job), alert: 'Application not found.' unless @job_application
   end
 
-  def interview_params
-    params.require(:interview).permit(:scheduled_at)
+  def set_interview
+    @interview = Interview.find_by(id: params[:interview_id], job: @job)
+    if @interview.nil?
+      redirect_to applications_overview_company_jobs_path, alert: 'Interview not found or not associated with this job.'
+    end
   end
 
   def set_company
@@ -182,5 +199,9 @@ class Company::JobsController < ApplicationController
   def job_params
     params.require(:job).permit(:title, :address, :city, :job_description, :responsibilities,
                                 :requirements, :experience, :salary, :qualification, :job_type)
+  end
+
+  def interview_params
+    params.require(:interview).permit(:scheduled_at)
   end
 end

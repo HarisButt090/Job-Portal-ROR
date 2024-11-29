@@ -1,0 +1,71 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Applicant Name</th>
+      <th>Job Title</th>
+      <th>Application Details</th>
+      <th>Interview Status</th>
+      <th>Interview Details</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @job_applications.each do |application| %>
+      <tr>
+        <td><%= application.job_seeker.user.name %></td>
+        <td><%= application.job.title %></td>
+        <td>
+          <%= link_to 'View Application', 
+                      view_application_company_job_path(application.job, application_id: application.id), 
+                      class: 'btn btn-primary btn-sm' %>
+        </td>
+        <td>
+          <% if application.interviews.any? %>
+            <% application.interviews.each do |interview| %>
+              <span class="badge 
+                          <%= interview.status == 'completed' ? 'badge-success' : 
+                              (interview.status == 'scheduled' ? 'badge-primary' : 
+                              (interview.status == 'cancelled' ? 'badge-danger' : 'badge-warning')) %>">
+                <%= interview.status.capitalize %>
+              </span>
+            <% end %>
+          <% else %>
+            <span class="text-muted">Not Scheduled</span>
+          <% end %>
+        </td>
+
+        <td>
+          <% if application.interviews.any? %>
+            <% application.interviews.each do |interview| %>
+              <p>
+                <%= interview.scheduled_at&.strftime('%d %b %Y, %I:%M %p') || 'N/A' %>
+              </p>
+            <% end %>
+          <% else %>
+            <span class="text-muted">N/A</span>
+          <% end %>
+        </td>
+
+        <td>
+          <% if application.interviews.any? %>
+            <% application.interviews.each do |interview| %>
+                <%= button_to 'Completed', 
+                update_interview_status_company_job_path(application.job.id, interview_id: interview.id, status: 'completed'), 
+                method: :patch, 
+                class: 'btn btn-success btn-sm', 
+                data: { confirm: 'Are you sure you want to mark this interview as completed?' } %>
+  
+              <%= button_to 'Cancelled', 
+                          update_interview_status_company_job_path(application.job.id, interview_id: interview.id, status: 'cancelled'), 
+                          method: :patch, 
+                          class: 'btn btn-danger btn-sm', 
+                          data: { confirm: 'Are you sure you want to cancel this interview?' } %>
+            <% end %>
+          <% else %>
+            <span class="text-muted">N/A</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
