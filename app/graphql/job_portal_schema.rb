@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class JobPortal < GraphQL::Schema
+class JobPortalSchema < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
