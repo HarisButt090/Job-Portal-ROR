@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FriendsSchema < GraphQL::Schema
+class JobPortal < GraphQL::Schema
   mutation(Types::MutationType)
   query(Types::QueryType)
 
