@@ -34,15 +34,18 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def save_job_seeker_details
-    user = User.find(params[:user_id])
-    @job_seeker = user.build_job_seeker(job_seeker_params)
-
+    @user = User.find(params[:user_id])
+    @job_seeker = @user.build_job_seeker(job_seeker_params)
+  
     if @job_seeker.save
       redirect_to verify_email_path, notice: "Job seeker details saved successfully!"
     else
-      render :job_seeker_details, alert: "There was an error saving job seeker details."
+      flash.now[:alert] = "There were errors with your submission. Please correct them below."
+      render :job_seeker_details, status: :unprocessable_entity
     end
   end
+  
+  
 
   def verify_email
     render template: "/devise/registrations/verify_email"
