@@ -15,6 +15,9 @@ gem "devise", "~> 4.9", ">= 4.9.3"
 # for sending invitation to set passwords
 gem 'devise_invitable'
 
+# for pagination 
+gem 'kaminari'
+
 gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
