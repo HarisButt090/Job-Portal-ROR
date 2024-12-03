@@ -1,12 +1,9 @@
 <div class="container mt-5">
-  <!-- Header Section -->
   <div class="text-center mb-5">
-    <h2 class="display-4 text-primary">Welcome to Your Job Seeker Dashboard!</h2>
-    <p class="lead">Discover exciting opportunities tailored to your skills and ambitions. Browse through the latest job postings and find your next career move.</p>
-    <p class="text-muted">These are the most recent published jobs waiting for you to explore.</p>
+      <h2 class="display-4 text-primary">Welcome to Your Job Seeker Dashboard!</h2>
+      <p class="lead">Discover exciting opportunities tailored to your skills and ambitions. Browse through the latest job postings and find your next career move.</p>
+      <p class="text-muted">These are the most recent published jobs waiting for you to explore.</p>
   </div>
-
-  <!-- Job Listings Section -->
   <div class="row">
     <% @jobs.each do |job| %>
       <div class="col-md-4 mb-4">
@@ -20,5 +17,9 @@
         </div>
       </div>
     <% end %>
+  </div>
+
+  <div class="pagination mt-4">
+    <%= paginate @jobs %>
   </div>
 </div>
