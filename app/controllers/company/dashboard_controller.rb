@@ -10,8 +10,10 @@ class Company::DashboardController < ApplicationController
   private
 
   def authorize_company_admin
-    unless current_user.role == 'company_admin'
-      redirect_to root_path, alert: "Access denied. Only company admins can access the company dashboard."
+    if current_user.role == 'job_seeker'
+      redirect_to job_seeker_dashboard_path, alert: "Access denied. You were redirected to the job seeker dashboard."
+    elsif current_user.role != 'company_admin'
+      redirect_to root_path, alert: "Access denied. You are not authorized to access this page."
     end
   end
 end
