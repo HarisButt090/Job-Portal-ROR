@@ -16,6 +16,7 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 
 gem "bootsnap", require: false
 
+gem "graphql"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -29,6 +30,10 @@ group :development do
   gem "web-console"
   # interface for browsing sent emails
   gem 'letter_opener_web'
+
+  # interface to tets GraphQl API
+  gem "graphiql-rails"
+  gem "faker"
 end
 
 group :test do
