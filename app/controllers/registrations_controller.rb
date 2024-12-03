@@ -18,13 +18,15 @@ class RegistrationsController < Devise::RegistrationsController
     user = User.find(params[:user_id])
     @company = Company.new(company_params)
     @company.user_id = user.id
-
+  
     if @company.save
       redirect_to verify_email_path, notice: "Company details saved successfully!"
     else
-      render :company_details, alert: "There was an error saving company details."
+      flash.now[:alert] = "There are errors in your form. Please correct them below."
+      render :company_details, status: :unprocessable_entity
     end
   end
+  
 
   def verify_email
     render template: "/devise/registrations/verify_email"
