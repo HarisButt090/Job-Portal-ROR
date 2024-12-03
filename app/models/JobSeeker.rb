@@ -13,7 +13,6 @@ class JobSeeker < ApplicationRecord
   has_one_attached :resume
 
   # Validations
-<<<<<<< HEAD
   validates :linkedin_profile_url, format: URI::DEFAULT_PARSER.make_regexp(%w[http https]), allow_blank: true
   validates :github_portfolio_url, format: URI::DEFAULT_PARSER.make_regexp(%w[http https]), allow_blank: true
   validates :preferred_job_type, presence: true
@@ -21,10 +20,6 @@ class JobSeeker < ApplicationRecord
   validates :resume, attached: true, content_type: ['application/pdf', 'application/msword', 
                 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'], 
                 size: { less_than: 5.megabytes }
-=======
-  validates :city, :address, :preferred_job_type, presence: true
-  validates :resume, attached: true, content_type: [ "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ], size: { less_than: 5.megabytes }
->>>>>>> ed3688a (Registered job seeker and redirected to dashboard)
 
   # enums
   enum :preferred_job_type, { on_site: 0, hybrid: 1, remote: 2 }
