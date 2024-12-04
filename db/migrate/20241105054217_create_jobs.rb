@@ -15,7 +15,7 @@ class CreateJobs < ActiveRecord::Migration[7.2]
       t.integer :job_status, default: 0
       t.date :job_posted_at
       t.timestamps
-      t.references :employer, null: true, foreign_key: true
+      t.references :recruiter, null: true, foreign_key: true
       t.references :company, null: false, foreign_key: true
     end
   end

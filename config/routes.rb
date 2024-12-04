@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
   post "/graphql", to: "graphql#execute"
   devise_for :users
+=======
+  devise_for :users, controllers: { invitations: 'users/invitations' }
+>>>>>>> a07c792 (Updated models and migration for Recruiter and model file names)
   # Letter opener route
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
