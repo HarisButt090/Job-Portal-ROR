@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   # Devise configurations
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable, :invitable
+         :rememberable, :validatable, :confirmable
 
   # Associations
   has_one :job_seeker, dependent: :destroy
