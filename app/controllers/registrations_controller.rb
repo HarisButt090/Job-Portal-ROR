@@ -28,6 +28,25 @@ class RegistrationsController < Devise::RegistrationsController
   end
   
 
+  def job_seeker_details
+    @user = User.find(params[:user_id])
+    @job_seeker = @user.build_job_seeker
+  end
+
+  def save_job_seeker_details
+    @user = User.find(params[:user_id])
+    @job_seeker = @user.build_job_seeker(job_seeker_params)
+  
+    if @job_seeker.save
+      redirect_to verify_email_path, notice: "Job seeker details saved successfully!"
+    else
+      flash.now[:alert] = "There were errors with your submission. Please correct them below."
+      render :job_seeker_details, status: :unprocessable_entity
+    end
+  end
+  
+  
+
   def verify_email
     render template: "/devise/registrations/verify_email"
   end
@@ -38,6 +57,8 @@ class RegistrationsController < Devise::RegistrationsController
     case user.role
     when "company_admin"
       redirect_to company_details_path(user_id: user.id)
+    when "job_seeker"
+      redirect_to job_seeker_details_path(user_id: user.id)
     else
       handle_default_redirect
     end
@@ -62,6 +83,10 @@ class RegistrationsController < Devise::RegistrationsController
 
   def company_params
     params.require(:company).permit(:name, :industry, :employee_size, :address)
+  end
+
+  def job_seeker_params
+    params.require(:job_seeker).permit(:linkedin_profile_url, :github_portfolio_url, :preferred_job_type, :city, :address, :resume)
   end
 
   protected

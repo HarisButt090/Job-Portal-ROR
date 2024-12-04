@@ -2,6 +2,7 @@ require_relative "boot"
 
 require "rails/all"
 require "devise"
+require "active_storage_validations"
 
 
 # Require the gems listed in Gemfile, including any gems
