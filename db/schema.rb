@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
+ActiveRecord::Schema[7.2].define(version: 2024_11_07_115452) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "industry"
@@ -105,10 +105,10 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
     t.date "job_posted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "employer_id"
+    t.integer "recruiter_id"
     t.integer "company_id", null: false
     t.index ["company_id"], name: "index_jobs_on_company_id"
-    t.index ["employer_id"], name: "index_jobs_on_employer_id"
+    t.index ["recruiter_id"], name: "index_jobs_on_recruiter_id"
   end
 
   create_table "recruiters", force: :cascade do |t|
@@ -136,6 +136,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "companies", "users"
@@ -148,7 +153,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_11_05_054931) do
   add_foreign_key "job_seeker_skills", "skills"
   add_foreign_key "job_seekers", "users"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "jobs", "employers"
+  add_foreign_key "jobs", "recruiters"
   add_foreign_key "recruiters", "companies"
   add_foreign_key "recruiters", "users"
 end
