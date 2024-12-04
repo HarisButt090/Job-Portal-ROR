@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   end
   post "/graphql", to: "graphql#execute"
   devise_for :users
-
   # Letter opener route
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
