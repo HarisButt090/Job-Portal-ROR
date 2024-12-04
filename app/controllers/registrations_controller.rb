@@ -36,6 +36,7 @@ class RegistrationsController < Devise::RegistrationsController
   def save_job_seeker_details
     @user = User.find(params[:user_id])
     @job_seeker = @user.build_job_seeker(job_seeker_params)
+    binding.pry
   
     if @job_seeker.save
       redirect_to verify_email_path, notice: "Job seeker details saved successfully!"
@@ -45,24 +46,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
   
-  
-
-  def job_seeker_details
-    @user = User.find(params[:user_id])
-    @job_seeker = @user.build_job_seeker
-  end
-
-  def save_job_seeker_details
-    user = User.find(params[:user_id])
-    @job_seeker = user.build_job_seeker(job_seeker_params)
-
-    if @job_seeker.save
-      redirect_to verify_email_path, notice: "Job seeker details saved successfully!"
-    else
-      render :job_seeker_details, alert: "There was an error saving job seeker details."
-    end
-  end
-
   def verify_email
     render template: "/devise/registrations/verify_email"
   end
@@ -109,9 +92,5 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     verify_email_path
-  end
-
-  def job_seeker_params
-    params.require(:user).require(:job_seeker_attributes).permit(:linkedin_profile_url, :github_portfolio_url, :preferred_job_type, :city, :address, :resume)
   end
 end
