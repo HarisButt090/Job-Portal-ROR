@@ -16,8 +16,11 @@ gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
 
+<<<<<<< HEAD
 gem "graphql"
 
+=======
+>>>>>>> e83bd49 (Updated models, removed unnecessary files from PR)
 group :development, :test do
   gem "debug", platforms: %i[ mri ], require: "debug/prelude"
 
@@ -30,10 +33,13 @@ group :development do
   gem "web-console"
   # interface for browsing sent emails
   gem 'letter_opener_web'
+<<<<<<< HEAD
 
   # interface to tets GraphQl API
   gem "graphiql-rails"
   gem "faker"
+=======
+>>>>>>> e83bd49 (Updated models, removed unnecessary files from PR)
 end
 
 group :test do
