@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
       job_seeker_dashboard_path
     elsif resource.company_admin?
       company_dashboard_path
+    elsif resource.super_admin?
+      admin_dashboard_path
     else
       root_path
     end

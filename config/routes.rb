@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     post "save_job_seeker_details", to: "registrations#save_job_seeker_details", as: "save_job_seeker_details"
   end
 
+  namespace :admin do
+    get "dashboard", to: "dashboard#index", as: "dashboard"
+  end
+
   namespace :job_seeker do
     get "dashboard", to: "dashboard#index", as: "dashboard"
   end

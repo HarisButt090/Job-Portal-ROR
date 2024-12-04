@@ -1,0 +1,36 @@
+<% content_for :title, "Admin Dashboard - Welcome" %>
+
+<div class="text-center">
+  <h2 class="display-4">Welcome to the Admin Dashboard!</h2>
+  <p class="lead">As an admin, you have control over user management, company details, and system configurations.</p>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-4">
+    <div class="card border-primary mb-3">
+      <div class="card-header">User Management</div>
+      <div class="card-body text-center">
+        <p class="card-text">Add, edit, or remove users from the system.</p>
+        <%= link_to "Manage Users", "#", class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card border-success mb-3">
+      <div class="card-header">Company Management</div>
+      <div class="card-body text-center">
+        <p class="card-text">View and manage all registered companies.</p>
+        <%= link_to "View Companies", "#", class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card border-warning mb-3">
+      <div class="card-header">System Settings</div>
+      <div class="card-body text-center">
+        <p class="card-text">Configure and manage system-wide settings.</p>
+        <%= link_to "System Settings", "#", class: "btn btn-warning" %>
+      </div>
+    </div>
+  </div>
+</div>
