@@ -1,4 +1,5 @@
 module Types
+  module JobSeeker
     class JobSeekerType < Types::BaseObject
       field :id, ID, null: false
       field :linkedin_profile_url, String, null: true
@@ -11,4 +12,5 @@ module Types
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     end
   end
+end
   

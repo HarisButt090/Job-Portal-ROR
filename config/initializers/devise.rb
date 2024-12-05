@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> fc8a1c5 (Updated models, removed unnecessary files from PR)
 # frozen_string_literal: true
 
 # Assuming you have not yet modified this file, each configuration option below
@@ -13,12 +9,9 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-<<<<<<< HEAD
   config.confirmation_keys = [:email]
   config.confirm_within = 3.days
 
-=======
->>>>>>> fc8a1c5 (Updated models, removed unnecessary files from PR)
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.

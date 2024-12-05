@@ -8,8 +8,10 @@ module Types
       field :status, String, null: false
       field :created_at, GraphQL::Types::ISO8601DateTime, null: false
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
-      # Associations
+
       field :company, Types::Company::CompanyType, null: true
+      field :job_seeker, Types::JobSeeker::JobSeekerType, null: true
+
     end
   end
 end
