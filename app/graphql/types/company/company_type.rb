@@ -1,4 +1,5 @@
 module Types
+  module Company
     class CompanyType < Types::BaseObject
       field :id, ID, null: false
       field :name, String, null: false
@@ -9,4 +10,5 @@ module Types
       field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     end
   end
+end
   

@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :company, dependent: :destroy
 
   # validations
-  validates :name, :email, presence: true
+  validates :name, :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 8 }, if: :password_required?
 
   # Enums
