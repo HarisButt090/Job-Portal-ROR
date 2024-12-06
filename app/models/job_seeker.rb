@@ -9,7 +9,9 @@ class JobSeeker < ApplicationRecord
   has_many :job_applications, dependent: :destroy
   has_many :interviews, through: :job_applications
 
-  
+  #attachment
+  has_one_attached :resume
+
   # Validations
   validates :city, :address, :preferred_job_type, presence: true
   # enums
