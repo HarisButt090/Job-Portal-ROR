@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   def landing
-<<<<<<< HEAD
     if user_signed_in?
       case current_user.role
       when "company_admin"
@@ -15,8 +14,6 @@ class PagesController < ApplicationController
         redirect_to root_path, alert: "Invalid role or access!"
       end
     end
-=======
->>>>>>> d4946ac (Company Registration through devise and redirecting to dashboard)
   end
 
   def register

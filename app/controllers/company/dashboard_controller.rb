@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 class Company::DashboardController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_company_admin
@@ -18,13 +17,3 @@ class Company::DashboardController < ApplicationController
     end
   end
 end
-=======
-
-  class Company::DashboardController < ApplicationController
-    before_action :authenticate_user!
-
-    def index
-      # Dashboard logic will go here
-    end
-  end
->>>>>>> 9a4c527 (Company registration using namespaces)
