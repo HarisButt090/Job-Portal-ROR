@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
 
-  
   if Rails.env.development?
     mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   end
   post "/graphql", to: "graphql#execute"
 
   root "pages#landing"
-
+  devise_for :users
 
   devise_scope :user do
     get "verify_email", to: "registrations#verify_email", as: "verify_email"
