@@ -12,14 +12,14 @@ gem "bcrypt", "~> 3.1.7"
 # for authentication purposes
 gem 'devise', '~> 4.9', '>= 4.9.3'
 
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[ jruby ]
 
 gem "bootsnap", require: false
 
 gem "graphql"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", platforms: %i[ mri ], require: "debug/prelude"
 
   gem "brakeman", require: false
 

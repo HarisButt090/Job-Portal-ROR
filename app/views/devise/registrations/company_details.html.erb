@@ -1,0 +1,45 @@
+<%= form_with model: @company, url: save_company_details_path(user_id: @user.id), method: :post, local: true do |f| %>
+  <%= hidden_field_tag :user_id, @user.id %>
+
+  <div class="mb-3">
+    <%= f.label :name, "Company Name", class: "form-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+    <% if @company.errors[:name].any? %>
+      <div class="text-danger"><%= @company.errors[:name].first %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :industry, "Industry", class: "form-label" %>
+    <%= f.text_field :industry, class: "form-control" %>
+    <% if @company.errors[:industry].any? %>
+      <div class="text-danger"><%= @company.errors[:industry].first %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :employee_size, "Employee Size", class: "form-label" %>
+    <%= f.text_field :employee_size, class: "form-control", type: "number", min: "1", step: "1" %>
+    <% if @company.errors[:employee_size].any? %>
+      <div class="text-danger"><%= @company.errors[:employee_size].first %></div>
+    <% end %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :address, "Address", class: "form-label" %>
+    <%= f.text_field :address, class: "form-control" %>
+    <% if @company.errors[:address].any? %>
+      <div class="text-danger"><%= @company.errors[:address].first %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Details", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <div class="alert alert-danger mt-3">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
