@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   # Devise configurations
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable
+         :rememberable, :validatable, :confirmable,
+         :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
 
   # Associations
   has_one :job_seeker, dependent: :destroy

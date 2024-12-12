@@ -12,6 +12,19 @@ Devise.setup do |config|
   config.confirmation_keys = [:email]
   config.confirm_within = 3.days
 
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.secret_key_base # Use Rails credentials for the secret key
+
+    jwt.dispatch_requests = [
+      ['POST', %r{^/users/sign_in$}] # Token will be generated on login
+    ]
+
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/users/sign_out$}] # Token revocation on logout
+    ]
+
+    jwt.expiration_time = 30.minutes.to_i # Set the expiration time for the token
+  end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
