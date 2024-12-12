@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
 
   root "pages#landing"
-
-  devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions" }
+  
+  devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions"}
 
   devise_scope :user do
     get "verify_email", to: "registrations#verify_email", as: "verify_email"
@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   end
 
   get "up", to: "rails/health#show", as: :rails_health_check
-
   get "service-worker", to: "rails/pwa#service_worker", as: :pwa_service_worker
   get "manifest", to: "rails/pwa#manifest", as: :pwa_manifest
 

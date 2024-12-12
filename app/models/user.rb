@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_one :recruiter, dependent: :destroy
   has_one :company, dependent: :destroy
 
-  # validations
+  # Validations
   validates :name, :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 8 }, if: :password_required?
 
@@ -16,4 +16,9 @@ class User < ApplicationRecord
   enum :role, { job_seeker: 0, company_admin: 1, employer: 2, super_admin: 3 }
   enum :status, { active: 0, non_active: 1 }
 
+  private
+
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
+  end
 end
