@@ -1,9 +1,8 @@
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
   include Devise::Controllers::Helpers
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_current_user
 
   def after_sign_in_path_for(resource)
     company_dashboard_path
@@ -15,7 +14,17 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [ :name, :role, company_attributes: [ :name, :industry, :employee_size, :address ] ])
+  private
+
+  def set_current_user
+    token = request.headers['Authorization']&.split(' ')&.last
+    return unless token
+
+    begin
+      payload = JWT.decode(token, Rails.application.credentials.secret_key_base).first
+      @current_user = User.find(payload['sub'])
+    rescue JWT::DecodeError, ActiveRecord::RecordNotFound
+      @current_user = nil
+    end
   end
 end

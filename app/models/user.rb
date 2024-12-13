@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Devise configurations
   devise :database_authenticatable, :registerable, :recoverable,
          :rememberable, :validatable, :confirmable,
-         :jwt_authenticatable, jwt_revocation_strategy: JwtBlacklist
+         :jwt_authenticatable , jwt_revocation_strategy: JwtDenylist 
 
   # Associations
   has_one :job_seeker, dependent: :destroy
@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_one :company, dependent: :destroy
 
   # Validations
-  validates :name, :email, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 8 }, if: :password_required?
 
   # Enums
