@@ -7,7 +7,6 @@ class GraphqlController < ApplicationController
       request: request
     }
     
-    binding.pry
 
     result = JobPortalSchema.execute(
       params[:query],
@@ -24,26 +23,19 @@ class GraphqlController < ApplicationController
 
   def authenticate_user
     header = request.headers['Authorization']
-    binding.pry
     return unless header.present? && header.start_with?('Bearer ')
   
     token = header.split(' ').last
-    binding.pry
     secret_key = Rails.application.secret_key_base
-    binding.pry
   
     begin
       decoded_token = JWT.decode(token, secret_key, true, algorithm: 'HS256')
-      binding.pry
       payload = decoded_token.first
-      binding.pry
   
       Rails.logger.info "Decoded Payload: #{payload}"
   
       user_id = payload['sub']
-      binding.pry
       @current_user = User.find_by(id: user_id)
-      binding.pry
   
     rescue JWT::DecodeError => e
       Rails.logger.error "JWT Error: #{e.message}"
