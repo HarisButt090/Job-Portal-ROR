@@ -5,13 +5,17 @@ Rails.application.routes.draw do
   post "/graphql", to: "graphql#execute"
 
   root "pages#landing"
-  
-  devise_for :users, controllers: { registrations: "registrations", sessions: "devise/sessions"}
+
+  devise_for :users, controllers: { 
+    registrations: "registrations", 
+    sessions: "devise/sessions"
+  }
 
   devise_scope :user do
     get "verify_email", to: "registrations#verify_email", as: "verify_email"
     get "company_details", to: "registrations#company_details", as: "company_details"
     post "save_company_details", to: "registrations#save_company_details", as: "save_company_details"
+    delete "users/sign_out", to: "devise/sessions#destroy"
   end
 
   namespace :company do
