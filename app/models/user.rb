@@ -1,8 +1,10 @@
 class User < ApplicationRecord
   # Devise configurations
   devise :database_authenticatable, :registerable, :recoverable,
-         :rememberable, :validatable, :confirmable,
+         :rememberable, :validatable, :confirmable, :invitable,
          :jwt_authenticatable , jwt_revocation_strategy: JwtDenylist 
+
+    belongs_to :invited_by, class_name: 'User', optional: true
 
   # Associations
   has_one :job_seeker, dependent: :destroy

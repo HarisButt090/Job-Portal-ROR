@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_13_122600) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_16_140456) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -180,6 +180,11 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_13_122600) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.integer "invited_by_id"
+    t.string "invitation_token"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.datetime "invitation_created_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -198,7 +203,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_13_122600) do
   add_foreign_key "job_seekers", "users"
   add_foreign_key "jobs", "companies"
   add_foreign_key "jobs", "recruiters"
-  add_foreign_key "jwt_blacklists", "users"
   add_foreign_key "recruiters", "companies"
   add_foreign_key "recruiters", "users"
 end
