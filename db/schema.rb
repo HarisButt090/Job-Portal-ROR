@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_12_06_092911) do
+ActiveRecord::Schema[7.2].define(version: 2024_12_13_122600) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -139,6 +139,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_092911) do
     t.index ["recruiter_id"], name: "index_jobs_on_recruiter_id"
   end
 
+  create_table "jwt_denylist", force: :cascade do |t|
+    t.string "jti", null: false
+    t.datetime "exp", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jti"], name: "index_jwt_denylist_on_jti"
+  end
+
   create_table "recruiters", force: :cascade do |t|
     t.string "department"
     t.date "joined_date"
@@ -190,6 +198,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_12_06_092911) do
   add_foreign_key "job_seekers", "users"
   add_foreign_key "jobs", "companies"
   add_foreign_key "jobs", "recruiters"
+  add_foreign_key "jwt_blacklists", "users"
   add_foreign_key "recruiters", "companies"
   add_foreign_key "recruiters", "users"
 end
