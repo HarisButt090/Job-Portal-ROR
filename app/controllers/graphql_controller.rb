@@ -7,7 +7,6 @@ class GraphqlController < ApplicationController
       request: request
     }
     
-
     result = JobPortalSchema.execute(
       params[:query],
       variables: ensure_hash(params[:variables]),
@@ -27,7 +26,6 @@ class GraphqlController < ApplicationController
   
     token = header.split(' ').last
     secret_key = Rails.application.secret_key_base
-  
     begin
       decoded_token = JWT.decode(token, secret_key, true, algorithm: 'HS256')
       payload = decoded_token.first
@@ -36,7 +34,6 @@ class GraphqlController < ApplicationController
   
       user_id = payload['sub']
       @current_user = User.find_by(id: user_id)
-  
     rescue JWT::DecodeError => e
       Rails.logger.error "JWT Error: #{e.message}"
       @current_user = nil

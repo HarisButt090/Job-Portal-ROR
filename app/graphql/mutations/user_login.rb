@@ -9,13 +9,20 @@ class Mutations::UserLogin < Mutations::BaseMutation
   def resolve(login_attributes:)
     email = login_attributes[:email]
     password = login_attributes[:password]
-
+  
     user = User.find_by(email: email)
-
+  
     if user&.valid_password?(password)
-      # Use Rails' secret_key_base to generate the token
-      payload = { sub: user.id, name: user.name }
-      token = JWT.encode(payload, Rails.application.secret_key_base, 'HS256') # Use the same secret key for encoding
+      jti = SecureRandom.uuid
+      exp = 24.hours.from_now.to_i 
+
+      payload = {
+        sub: user.id,
+        name: user.name,
+        jti: jti,
+        exp: exp # Add expiration time to the payload
+      }
+      token = JWT.encode(payload, Rails.application.secret_key_base, 'HS256')
 
       {
         token: token,
@@ -30,4 +37,5 @@ class Mutations::UserLogin < Mutations::BaseMutation
       }
     end
   end
+  
 end
