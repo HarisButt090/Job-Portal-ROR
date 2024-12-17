@@ -6,6 +6,7 @@ module Types
     field :user_login , mutation: Mutations::UserLogin
     field :user_logout, mutation: Mutations::UserLogout
     field :add_recruiter, mutation: Mutations::AddRecruiter
+    field :update_recruiter, mutation: Mutations::UpdateRecruiter
 
   end
 end
